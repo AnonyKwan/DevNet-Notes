@@ -1,0 +1,12 @@
+---
+  - hosts: all
+    gather_facts: false
+    
+    tasks:
+    - name: Push COnfig File
+      ios_config:
+        src: /home/devnet/DevNet/ansible-DevNet/playbooks/router-config.txt
+
+      register: output
+
+    - debug: var=output

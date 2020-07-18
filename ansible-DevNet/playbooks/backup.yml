@@ -1,0 +1,41 @@
+---
+ - hosts: all
+
+   tasks:
+
+   - name: Gather Date and Time
+     setup:
+      gather_subset: "all"
+
+   - name: Defin Vars
+     set_fact:
+      DATE: "{{ ansible_date_time.date }}"
+      LOC_UNREAD: "/home/devnet/DevNet/ansible-DevNet/backups/ansible/Backup-{{ ansible_date_time.date }}"
+      LOC_READ: "/home/devnet/DevNet/ansible-DevNet/backups/ios/Backup-{{ ansible_date_time.date }}"
+
+   - name: Create Directory "ansible/Backup {{ DATE }}
+     file:
+      path: "{{ LOC_UNREAD }}"
+      state: directory
+     run_once: true
+
+   - name: Create Directory "ios/Backup {{ DATE }}
+     file:
+      path: "{{ LOC_READ }}"
+      state: directory
+     run_once: true
+
+   - name: Reading Running Config
+     ios_command:
+      commands:
+        - show run | be Curre
+     register: config
+   - debug: var=config
+
+   - name: Save output to {{ LOC }}
+     copy:
+       content: "{{config.stdout}}"
+       dest: "{{ LOC_UNREAD }}/{{ inventory_hostname }}-config.txt"
+
+   - name: Convert output to IOS cli format
+     shell: sed 's/\\n/\n/g' {{ LOC_UNREAD }}/{{ inventory_hostname }}-config.txt > {{ LOC_READ }}/{{ inventory_hostname }}-config.txt

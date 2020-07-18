@@ -1,0 +1,14 @@
+---
+  - hosts: all
+    gather_facts: false
+
+    tasks:
+    - name: Show Version 
+      ios_command:
+        commands:
+          - show version
+    
+      register: output 
+
+    - name: Display Version {{ ansible_date_time }}
+      debug: var=output

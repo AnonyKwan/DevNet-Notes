@@ -1,0 +1,12 @@
+crypto key generate rsa general-keys modulus 1024
+username admin privilege 15 secret CISCO123
+line vty 0 4
+login local 
+transport input ssh
+ip ssh version 2
+
+router ospf 10
+int g0/0
+ip ospf 10 area 0
+int g0/1
+ip ospf 10 area 0
