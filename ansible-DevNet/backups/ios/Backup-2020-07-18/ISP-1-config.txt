@@ -1,4 +1,4 @@
-["Current configuration : 3857 bytes
+["Current configuration : 3860 bytes
 !
 ! Last configuration change at 06:58:12 UTC Sat Jul 18 2020
 !
@@ -129,7 +129,7 @@ tftp-server flash:Backup
 !
 control-plane
 !
-banner exec ^C
+banner exec ^CC
 **************************************************************************
 * IOSv is strictly limited to use for evaluation, demonstration and IOS  *
 * education. IOSv is provided as-is and is not supported by Cisco's      *
@@ -138,7 +138,7 @@ banner exec ^C
 * purposes is expressly prohibited except as otherwise authorized by     *
 * Cisco in writing.                                                      *
 **************************************************************************^C
-banner incoming ^C
+banner incoming ^CC
 **************************************************************************
 * IOSv is strictly limited to use for evaluation, demonstration and IOS  *
 * education. IOSv is provided as-is and is not supported by Cisco's      *
@@ -147,7 +147,7 @@ banner incoming ^C
 * purposes is expressly prohibited except as otherwise authorized by     *
 * Cisco in writing.                                                      *
 **************************************************************************^C
-banner login ^C
+banner login ^CC
 **************************************************************************
 * IOSv is strictly limited to use for evaluation, demonstration and IOS  *
 * education. IOSv is provided as-is and is not supported by Cisco's      *

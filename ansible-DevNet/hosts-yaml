@@ -1,0 +1,25 @@
+all:
+  children:
+    ISP:
+      hosts:
+        ISP-1:
+          ansible_host: 10.0.0.1
+    Routers:
+      hosts:
+        R1:
+          ansible_host: 10.0.0.10
+        R2:
+          ansible_host: 10.0.0.11
+  vars:
+    ansible_become: yes
+    ansible_network_os: ios
+    ansible_connection: network_cli
+    ansible_user: admin
+    ansible_password: !vault |
+          $ANSIBLE_VAULT;1.2;AES256;ansible_ssh
+          35633738343163353637373163346561356139616439643030663262363661316335633335336561
+          6536323266373232356165626431616632643330663136630a316635323731383562303638633837
+          39306232336332363535303039353463393434313765313434626336653235666566656534666538
+          3834353433393937330a653563353839373031656432623465303439333865396165356261353166
+          6232
+

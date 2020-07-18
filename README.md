@@ -11,10 +11,11 @@ Learning Network Automation
 
 >ansible --list-hosts \!ISP # **Exclude Group ISP**
 
->ansible -m ping --vault-password-file ansible-pwd all # **Import Vault File for password** !!!!! ERROR
-
 > sed 's/\\n/\n/g' unreadable_backup_file > human_readable_file # **Conver Unreable file to IOS output**
 
+> ansible-vault encrypt_string --vault-id ansible_ssh@prompt 'CISCO123' --name 'ansible_password' # **Vault ID can be anything, CISCO123 is the str that need to be encrypted**
+
+>ansible -i hosts-yaml -m ping --ask-vault-pass all # **Import Vault File for password**
 ---
 >**Playbooks** - Essential
 
@@ -40,6 +41,7 @@ Learning Network Automation
 
 >pyats diff test1 test2   **# Compare the differences**
 
+---
 >**Python coding**
 
 ---

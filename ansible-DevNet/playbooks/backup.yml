@@ -12,6 +12,7 @@
       DATE: "{{ ansible_date_time.date }}"
       LOC_UNREAD: "/home/devnet/DevNet/ansible-DevNet/backups/ansible/Backup-{{ ansible_date_time.date }}"
       LOC_READ: "/home/devnet/DevNet/ansible-DevNet/backups/ios/Backup-{{ ansible_date_time.date }}"
+     run_once: true
 
    - name: Create Directory "ansible/Backup {{ DATE }}
      file:
