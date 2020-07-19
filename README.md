@@ -1,7 +1,7 @@
-# DevNet
+# **DevNet**
 Learning Network Automation 
 
-# Ansible Cheat-Sheet - Configuration & Operation
+# **Ansible Cheat-Sheet** - CLI-based (Configuration & Operation)
 
 > **local hosts & ansible.cfg override the default**
 
@@ -16,15 +16,23 @@ Learning Network Automation
 > ansible-vault encrypt_string --vault-id ansible_ssh@prompt 'CISCO123' --name 'ansible_password' # **Vault ID can be anything, CISCO123 is the str that need to be encrypted**
 
 >ansible -i hosts-yaml -m ping --ask-vault-pass all # **Import Vault File for password**
----
->**Playbooks** - Essential
 
 ---
 > [Ansible Network Docs](https://docs.ansible.com/ansible/latest/network/)
 
+# **NorNir Cheat-Sheet** - Python-Based (Configuration & Operation) Most efficient **Preferred**
 
-# pyATS  Cheat-Sheet - Operational Automation (Verification/Testing)
+> Go through the tutorial of the official Documentation
+
+> ref the code i wrote
+
 ---
+>[Nornir Docs  >> Most Important <<](https://nornir.readthedocs.io/en/latest/index.html)
+
+>[Nornir Plugins](https://nornir.readthedocs.io/en/latest/plugins/index.html)
+
+# **pyATS  Cheat-Sheet** - CLI & Python-Based (Operation) (Verification/Testing) 
+
 >Run in Virtual Enviroment
 
 * python3 -m venv .
@@ -42,13 +50,11 @@ Learning Network Automation
 >pyats diff test1 test2   **# Compare the differences**
 
 ---
->**Python coding**
-
----
 > [Genie API Link](https://pubhub.devnetcloud.com/media/genie-feature-browser/docs/#/)
 
 > [Models List = pyats Learn](https://pubhub.devnetcloud.com/media/genie-feature-browser/docs/#/models)
 
 > [Parsers List = pyats parse](https://pubhub.devnetcloud.com/media/genie-feature-browser/docs/#/parsers)
+
 
 

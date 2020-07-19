@@ -1,0 +1,16 @@
+---
+CISCO:
+  platform: ios
+  username: admin 
+  password: CISCO123 
+  connection_options:
+    netmiko:
+      extras:
+       secret: CISCO
+
+ISP:
+  groups:
+    - CISCO
+Routers:
+  groups:
+    - CISCO

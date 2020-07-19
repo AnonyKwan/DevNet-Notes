@@ -1,0 +1,512 @@
+2020-07-19 22:28:52,312 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show run'} on 3 hosts
+2020-07-19 22:29:00,842 -  nornir.core -     INFO -        run() - Running task 'write_file' with args {'content': AggregatedResult (netmiko_send_command): {'ISP-1': MultiResult: [Result: "netmiko_send_command"], 'R1': MultiResult: [Result: "netmiko_send_command"], 'R2': MultiResult: [Result: "netmiko_send_command"]}, 'filename': "backup/{'ISP-1': Host: ISP-1, 'R1': Host: R1, 'R2': Host: R2}&d-&m-&y.txt"} on 3 hosts
+2020-07-19 22:29:00,846 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'write_file' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\files\write_file.py", line 51, in write_file
+    diff = _generate_diff(filename, content, append)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\files\write_file.py", line 23, in _generate_diff
+    new_content = content.splitlines()
+AttributeError: 'AggregatedResult' object has no attribute 'splitlines'
+
+2020-07-19 22:29:00,846 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'write_file' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\files\write_file.py", line 51, in write_file
+    diff = _generate_diff(filename, content, append)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\files\write_file.py", line 23, in _generate_diff
+    new_content = content.splitlines()
+AttributeError: 'AggregatedResult' object has no attribute 'splitlines'
+
+2020-07-19 22:29:00,847 - nornir.core.task -    ERROR -      start() - Host 'ISP-1': task 'write_file' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\files\write_file.py", line 51, in write_file
+    diff = _generate_diff(filename, content, append)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\files\write_file.py", line 23, in _generate_diff
+    new_content = content.splitlines()
+AttributeError: 'AggregatedResult' object has no attribute 'splitlines'
+
+2020-07-19 22:56:13,019 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show version', 'enable': True} on 3 hosts
+2020-07-19 22:57:01,762 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show version', 'enable': True} on 3 hosts
+2020-07-19 22:57:34,976 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show version', 'enable': True} on 3 hosts
+2020-07-19 22:59:48,779 -  nornir.core -     INFO -        run() - Running task <function send_command at 0x000002459296B940> with args {'name': <function send_command at 0x000002459296B940>, 'command': 'show version'} on 3 hosts
+2020-07-19 23:00:26,967 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'name': 'send_command', 'command': 'show version'} on 3 hosts
+2020-07-19 23:02:33,746 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'name': 'send_command', 'command': ['show version', 'show ip int bri']} on 3 hosts
+2020-07-19 23:02:33,748 - nornir.core.task -    ERROR -      start() - Host 'ISP-1': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+TypeError: send_command() got an unexpected keyword argument 'command'
+
+2020-07-19 23:02:33,749 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+TypeError: send_command() got an unexpected keyword argument 'command'
+
+2020-07-19 23:02:33,749 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+TypeError: send_command() got an unexpected keyword argument 'command'
+
+2020-07-19 23:02:56,733 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'name': 'send_command', 'commands': ['show version', 'show ip int bri']} on 3 hosts
+2020-07-19 23:03:02,256 - nornir.core.task -    ERROR -      start() - Host 'ISP-1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\networking\netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\utilities.py", line 347, in wrapper_decorator
+    return func(self, *args, **kwargs)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 1379, in send_command
+    command_string = self.normalize_cmd(command_string)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 1533, in normalize_cmd
+    command = command.rstrip()
+AttributeError: 'list' object has no attribute 'rstrip'
+
+2020-07-19 23:03:02,257 - nornir.core.task -    ERROR -      start() - Host 'ISP-1': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:/CCNP/DevNet/nornir/start.py", line 49, in send_command
+    task.run(task=netmiko_send_command,
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 147, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function netmiko_send_command at 0x000001678C68F550> (failed)
+
+
+2020-07-19 23:03:02,532 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\networking\netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\utilities.py", line 347, in wrapper_decorator
+    return func(self, *args, **kwargs)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 1379, in send_command
+    command_string = self.normalize_cmd(command_string)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 1533, in normalize_cmd
+    command = command.rstrip()
+AttributeError: 'list' object has no attribute 'rstrip'
+
+2020-07-19 23:03:02,533 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:/CCNP/DevNet/nornir/start.py", line 49, in send_command
+    task.run(task=netmiko_send_command,
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 147, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function netmiko_send_command at 0x000001678C68F550> (failed)
+
+
+2020-07-19 23:03:02,547 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\networking\netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\utilities.py", line 347, in wrapper_decorator
+    return func(self, *args, **kwargs)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 1379, in send_command
+    command_string = self.normalize_cmd(command_string)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 1533, in normalize_cmd
+    command = command.rstrip()
+AttributeError: 'list' object has no attribute 'rstrip'
+
+2020-07-19 23:03:02,548 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:/CCNP/DevNet/nornir/start.py", line 49, in send_command
+    task.run(task=netmiko_send_command,
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 147, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function netmiko_send_command at 0x000001678C68F550> (failed)
+
+
+2020-07-19 23:04:28,862 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'name': 'send_command', 'commands': 'show ip int bri'} on 3 hosts
+2020-07-19 23:14:14,475 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'name': 'send_command', 'commands': 'show ip int bri'} on 3 hosts
+2020-07-19 23:14:20,377 - nornir.core.task -    ERROR -      start() - Host 'ISP-1': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:/CCNP/DevNet/nornir/start.py", line 54, in send_command
+    filename="{}.txt".format(task.inventory.host))
+AttributeError: 'Task' object has no attribute 'inventory'
+
+2020-07-19 23:14:20,694 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:/CCNP/DevNet/nornir/start.py", line 54, in send_command
+    filename="{}.txt".format(task.inventory.host))
+AttributeError: 'Task' object has no attribute 'inventory'
+
+2020-07-19 23:14:20,731 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:/CCNP/DevNet/nornir/start.py", line 54, in send_command
+    filename="{}.txt".format(task.inventory.host))
+AttributeError: 'Task' object has no attribute 'inventory'
+
+2020-07-19 23:15:33,242 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'name': 'send_command', 'commands': 'show ip int bri'} on 3 hosts
+2020-07-19 23:15:39,074 - nornir.core.task -    ERROR -      start() - Host 'ISP-1': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:/CCNP/DevNet/nornir/start.py", line 54, in send_command
+    filename="{}.txt".format(task.inventory.hosts))
+AttributeError: 'Task' object has no attribute 'inventory'
+
+2020-07-19 23:15:39,881 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:/CCNP/DevNet/nornir/start.py", line 54, in send_command
+    filename="{}.txt".format(task.inventory.hosts))
+AttributeError: 'Task' object has no attribute 'inventory'
+
+2020-07-19 23:15:39,884 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:/CCNP/DevNet/nornir/start.py", line 54, in send_command
+    filename="{}.txt".format(task.inventory.hosts))
+AttributeError: 'Task' object has no attribute 'inventory'
+
+2020-07-19 23:16:11,738 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'name': 'send_command', 'commands': 'show ip int bri'} on 3 hosts
+2020-07-19 23:16:17,635 - nornir.core.task -    ERROR -      start() - Host 'ISP-1': task 'write_file' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\files\write_file.py", line 55, in write_file
+    with open(filename, mode=mode) as f:
+OSError: [Errno 22] Invalid argument: "{'ISP-1': Host: ISP-1, 'R1': Host: R1, 'R2': Host: R2}.txt"
+
+2020-07-19 23:16:17,636 - nornir.core.task -    ERROR -      start() - Host 'ISP-1': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:/CCNP/DevNet/nornir/start.py", line 52, in send_command
+    task.run(task=write_file,
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 147, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function write_file at 0x00000170D054A670> (failed)
+
+
+2020-07-19 23:16:17,954 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'write_file' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\files\write_file.py", line 55, in write_file
+    with open(filename, mode=mode) as f:
+OSError: [Errno 22] Invalid argument: "{'ISP-1': Host: ISP-1, 'R1': Host: R1, 'R2': Host: R2}.txt"
+
+2020-07-19 23:16:17,954 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:/CCNP/DevNet/nornir/start.py", line 52, in send_command
+    task.run(task=write_file,
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 147, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function write_file at 0x00000170D054A670> (failed)
+
+
+2020-07-19 23:16:17,983 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'write_file' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\files\write_file.py", line 55, in write_file
+    with open(filename, mode=mode) as f:
+OSError: [Errno 22] Invalid argument: "{'ISP-1': Host: ISP-1, 'R1': Host: R1, 'R2': Host: R2}.txt"
+
+2020-07-19 23:16:17,984 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:/CCNP/DevNet/nornir/start.py", line 52, in send_command
+    task.run(task=write_file,
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 147, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function write_file at 0x00000170D054A670> (failed)
+
+
+2020-07-19 23:18:08,364 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'name': 'send_command', 'commands': 'show ip int bri'} on 3 hosts
+2020-07-19 23:18:14,286 - nornir.core.task -    ERROR -      start() - Host 'ISP-1': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:/CCNP/DevNet/nornir/start.py", line 54, in send_command
+    filename="{}.txt".format(task.hosts))
+AttributeError: 'Task' object has no attribute 'hosts'
+
+2020-07-19 23:18:14,602 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:/CCNP/DevNet/nornir/start.py", line 54, in send_command
+    filename="{}.txt".format(task.hosts))
+AttributeError: 'Task' object has no attribute 'hosts'
+
+2020-07-19 23:18:14,610 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:/CCNP/DevNet/nornir/start.py", line 54, in send_command
+    filename="{}.txt".format(task.hosts))
+AttributeError: 'Task' object has no attribute 'hosts'
+
+2020-07-19 23:18:31,780 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'name': 'send_command', 'commands': 'show ip int bri'} on 3 hosts
+2020-07-19 23:19:39,623 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'name': 'send_command', 'commands': 'show ip int bri'} on 3 hosts
+2020-07-19 23:19:45,403 - nornir.core.task -    ERROR -      start() - Host 'ISP-1': task 'write_file' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\files\write_file.py", line 55, in write_file
+    with open(filename, mode=mode) as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'int/ISP-1.txt'
+
+2020-07-19 23:19:45,403 - nornir.core.task -    ERROR -      start() - Host 'ISP-1': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:/CCNP/DevNet/nornir/start.py", line 52, in send_command
+    task.run(task=write_file,
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 147, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function write_file at 0x000002AF19E8B670> (failed)
+
+
+2020-07-19 23:19:46,032 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'write_file' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\files\write_file.py", line 55, in write_file
+    with open(filename, mode=mode) as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'int/R2.txt'
+
+2020-07-19 23:19:46,032 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:/CCNP/DevNet/nornir/start.py", line 52, in send_command
+    task.run(task=write_file,
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 147, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function write_file at 0x000002AF19E8B670> (failed)
+
+
+2020-07-19 23:19:46,046 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'write_file' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\files\write_file.py", line 55, in write_file
+    with open(filename, mode=mode) as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'int/R1.txt'
+
+2020-07-19 23:19:46,046 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:/CCNP/DevNet/nornir/start.py", line 52, in send_command
+    task.run(task=write_file,
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 147, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function write_file at 0x000002AF19E8B670> (failed)
+
+
+2020-07-19 23:20:05,255 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'name': 'send_command', 'commands': 'show ip int bri'} on 3 hosts
+2020-07-19 23:25:41,396 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'name': 'send_command', 'commands': 'show ip int bri'} on 3 hosts
+2020-07-19 23:25:47,295 - nornir.core.task -    ERROR -      start() - Host 'ISP-1': task 'write_file' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\files\write_file.py", line 51, in write_file
+    diff = _generate_diff(filename, content, append)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\files\write_file.py", line 23, in _generate_diff
+    new_content = content.splitlines()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 262, in __getattr__
+    return getattr(self[0], name)
+AttributeError: 'Result' object has no attribute 'splitlines'
+
+2020-07-19 23:25:47,295 - nornir.core.task -    ERROR -      start() - Host 'ISP-1': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:/CCNP/DevNet/nornir/start.py", line 52, in send_command
+    task.run(task=write_file,
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 147, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function write_file at 0x000001BD6710B670> (failed)
+
+
+2020-07-19 23:25:47,571 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'write_file' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\files\write_file.py", line 51, in write_file
+    diff = _generate_diff(filename, content, append)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\files\write_file.py", line 23, in _generate_diff
+    new_content = content.splitlines()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 262, in __getattr__
+    return getattr(self[0], name)
+AttributeError: 'Result' object has no attribute 'splitlines'
+
+2020-07-19 23:25:47,571 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:/CCNP/DevNet/nornir/start.py", line 52, in send_command
+    task.run(task=write_file,
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 147, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function write_file at 0x000001BD6710B670> (failed)
+
+
+2020-07-19 23:25:47,633 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'write_file' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\files\write_file.py", line 51, in write_file
+    diff = _generate_diff(filename, content, append)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\files\write_file.py", line 23, in _generate_diff
+    new_content = content.splitlines()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 262, in __getattr__
+    return getattr(self[0], name)
+AttributeError: 'Result' object has no attribute 'splitlines'
+
+2020-07-19 23:25:47,633 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:/CCNP/DevNet/nornir/start.py", line 52, in send_command
+    task.run(task=write_file,
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 147, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function write_file at 0x000001BD6710B670> (failed)
+
+
+2020-07-19 23:26:01,922 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'name': 'send_command', 'commands': 'show ip int bri'} on 3 hosts
+2020-07-19 23:26:07,833 - nornir.core.task -    ERROR -      start() - Host 'ISP-1': task 'write_file' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+TypeError: write_file() missing 1 required positional argument: 'content'
+
+2020-07-19 23:26:07,834 - nornir.core.task -    ERROR -      start() - Host 'ISP-1': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:/CCNP/DevNet/nornir/start.py", line 52, in send_command
+    task.run(task=write_file,
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 147, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function write_file at 0x0000027A9139B670> (failed)
+
+
+2020-07-19 23:26:08,163 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'write_file' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+TypeError: write_file() missing 1 required positional argument: 'content'
+
+2020-07-19 23:26:08,163 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:/CCNP/DevNet/nornir/start.py", line 52, in send_command
+    task.run(task=write_file,
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 147, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function write_file at 0x0000027A9139B670> (failed)
+
+
+2020-07-19 23:26:08,175 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'write_file' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+TypeError: write_file() missing 1 required positional argument: 'content'
+
+2020-07-19 23:26:08,176 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:/CCNP/DevNet/nornir/start.py", line 52, in send_command
+    task.run(task=write_file,
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 147, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function write_file at 0x0000027A9139B670> (failed)
+
+
+2020-07-19 23:28:18,204 -  nornir.core -     INFO -        run() - Running task 'Backup Configuration Files' with args {'name': 'Backup Configuration Files', 'commands': 'show ip int bri'} on 3 hosts
+2020-07-19 23:28:58,405 -  nornir.core -     INFO -        run() - Running task 'Backup Configuration Files' with args {'name': 'Backup Configuration Files', 'commands': 'show run'} on 3 hosts
+2020-07-19 23:30:49,861 -  nornir.core -     INFO -        run() - Running task 'Backup Configuration Files' with args {'name': 'Backup Configuration Files', 'commands': 'show run'} on 3 hosts
+2020-07-19 23:32:11,157 -  nornir.core -     INFO -        run() - Running task 'Backup Configuration Files' with args {'name': 'Backup Configuration Files', 'commands': 'show run'} on 3 hosts
+2020-07-19 23:32:48,580 -  nornir.core -     INFO -        run() - Running task 'Backup Configuration Files' with args {'name': 'Backup Configuration Files', 'commands': 'show run'} on 3 hosts
+2020-07-19 23:44:46,557 -  nornir.core -     INFO -        run() - Running task 'Backup Configuration Files' with args {'name': 'Backup Configuration Files', 'commands': 'show run'} on 3 hosts
+2020-07-19 23:44:54,662 - nornir.core.task -    ERROR -      start() - Host 'ISP-1': task 'write_file' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\files\write_file.py", line 55, in write_file
+    with open(filename, mode=mode) as f:
+OSError: [Errno 22] Invalid argument: 'backup/ISP-1-<built-in method now of type object at 0x00007FF8BF4C7530>.txt'
+
+2020-07-19 23:44:54,663 - nornir.core.task -    ERROR -      start() - Host 'ISP-1': task 'Backup Configuration Files' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:/CCNP/DevNet/nornir/start.py", line 56, in backup_config
+    task.run(task=write_file,
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 147, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function write_file at 0x0000027C161AB670> (failed)
+
+
+2020-07-19 23:44:54,981 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'write_file' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\files\write_file.py", line 55, in write_file
+    with open(filename, mode=mode) as f:
+OSError: [Errno 22] Invalid argument: 'backup/R1-<built-in method now of type object at 0x00007FF8BF4C7530>.txt'
+
+2020-07-19 23:44:54,982 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'Backup Configuration Files' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:/CCNP/DevNet/nornir/start.py", line 56, in backup_config
+    task.run(task=write_file,
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 147, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function write_file at 0x0000027C161AB670> (failed)
+
+
+2020-07-19 23:44:55,131 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'write_file' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\files\write_file.py", line 55, in write_file
+    with open(filename, mode=mode) as f:
+OSError: [Errno 22] Invalid argument: 'backup/R2-<built-in method now of type object at 0x00007FF8BF4C7530>.txt'
+
+2020-07-19 23:44:55,131 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'Backup Configuration Files' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:/CCNP/DevNet/nornir/start.py", line 56, in backup_config
+    task.run(task=write_file,
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 147, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function write_file at 0x0000027C161AB670> (failed)
+
+
+2020-07-19 23:56:36,134 -  nornir.core -     INFO -        run() - Running task 'Backup Configuration Files' with args {'name': 'Backup Configuration Files', 'commands': 'show run'} on 3 hosts

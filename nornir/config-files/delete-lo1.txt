@@ -1,0 +1,4 @@
+int lo1 
+no ip addr 1.1.1.1 255.255.255.255
+shut
+no int lo1 
