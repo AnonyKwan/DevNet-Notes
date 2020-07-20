@@ -2428,3 +2428,66 @@ Traceback (most recent call last):
 nornir.core.exceptions.NornirSubTaskError: Subtask: <function napalm_validate at 0x000001FC8133F040> (failed)
 
 
+2020-07-20 17:22:49,284 -  nornir.core -     INFO -        run() - Running task 'Show Version' with args {'name': 'Show Version'} on 3 hosts
+2020-07-20 17:28:10,449 -  nornir.core -     INFO -        run() - Running task 'Show Version' with args {'name': 'Show Version'} on 3 hosts
+2020-07-20 17:28:10,453 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'Show Version' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "/home/devnet/DevNet/DevNet-Learning/nornir/start.py", line 89, in show_version
+    result = task.host.run(task=netmiko_send_command,
+  File "/usr/local/lib/python3.8/dist-packages/nornir/core/inventory.py", line 168, in __getattribute__
+    return object.__getattribute__(self, name)
+AttributeError: 'Host' object has no attribute 'run'
+
+2020-07-20 17:28:10,454 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'Show Version' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "/home/devnet/DevNet/DevNet-Learning/nornir/start.py", line 89, in show_version
+    result = task.host.run(task=netmiko_send_command,
+  File "/usr/local/lib/python3.8/dist-packages/nornir/core/inventory.py", line 168, in __getattribute__
+    return object.__getattribute__(self, name)
+AttributeError: 'Host' object has no attribute 'run'
+
+2020-07-20 17:28:10,454 - nornir.core.task -    ERROR -      start() - Host 'ISP-1': task 'Show Version' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "/home/devnet/DevNet/DevNet-Learning/nornir/start.py", line 89, in show_version
+    result = task.host.run(task=netmiko_send_command,
+  File "/usr/local/lib/python3.8/dist-packages/nornir/core/inventory.py", line 168, in __getattribute__
+    return object.__getattribute__(self, name)
+AttributeError: 'Host' object has no attribute 'run'
+
+2020-07-20 17:28:18,269 -  nornir.core -     INFO -        run() - Running task 'Show Version' with args {'name': 'Show Version'} on 3 hosts
+2020-07-20 17:28:18,274 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'Show Version' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "/home/devnet/DevNet/DevNet-Learning/nornir/start.py", line 89, in show_version
+    result = task.host.run(task=netmiko_send_command,
+  File "/usr/local/lib/python3.8/dist-packages/nornir/core/inventory.py", line 168, in __getattribute__
+    return object.__getattribute__(self, name)
+AttributeError: 'Host' object has no attribute 'run'
+
+2020-07-20 17:28:18,275 - nornir.core.task -    ERROR -      start() - Host 'ISP-1': task 'Show Version' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "/home/devnet/DevNet/DevNet-Learning/nornir/start.py", line 89, in show_version
+    result = task.host.run(task=netmiko_send_command,
+  File "/usr/local/lib/python3.8/dist-packages/nornir/core/inventory.py", line 168, in __getattribute__
+    return object.__getattribute__(self, name)
+AttributeError: 'Host' object has no attribute 'run'
+
+2020-07-20 17:28:18,275 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'Show Version' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "/home/devnet/DevNet/DevNet-Learning/nornir/start.py", line 89, in show_version
+    result = task.host.run(task=netmiko_send_command,
+  File "/usr/local/lib/python3.8/dist-packages/nornir/core/inventory.py", line 168, in __getattribute__
+    return object.__getattribute__(self, name)
+AttributeError: 'Host' object has no attribute 'run'
+

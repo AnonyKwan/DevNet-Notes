@@ -1,0 +1,40 @@
+devices:
+  ISP:
+    connections:
+      cli:
+        ip: 10.0.0.1
+        protocol: ssh
+    credentials:
+      default:
+        password: CISCO123
+        username: admin
+      enable:
+        password: CISCO
+    os: ios
+    type: ios
+  R1:
+    connections:
+      cli:
+        ip: 10.0.0.10
+        protocol: ssh
+    credentials:
+      default:
+        password: CISCO123
+        username: admin
+      enable:
+        password: CISCO
+    os: ios
+    type: ios
+  R2:
+    connections:
+      cli:
+        ip: 10.0.0.11
+        protocol: ssh
+    credentials:
+      default:
+        password: CISCO123
+        username: admin
+      enable:
+        password: CISCO
+    os: ios
+    type: ios

@@ -9,6 +9,7 @@ from nornir.core.filter import F
 from nornir.plugins.tasks.networking import napalm_get, napalm_validate, netmiko_send_command, tcp_ping, netmiko_send_config
 from nornir.plugins.tasks.files import write_file
 
+
 # 1. Import the module that we need to use from
 # [https://nornir.readthedocs.io/en/latest/plugins/index.html]
 # the module Name [nornir.plugins.tasks.networking.netconf_get_config]
@@ -90,7 +91,7 @@ cisco_all = nr.filter(F(groups__contains="CISCO"))
 #                       command_string="show version")
 #     print(task.host)
 #     print_result(result)
-#
+# 
 # cisco_all.run(name="Show Version",
 #               task=show_version)
 ######################################################################################################
@@ -111,3 +112,63 @@ cisco_all = nr.filter(F(groups__contains="CISCO"))
 #               task=config_validate,
 #               souce_date="2020-07-20")
 ######################################################################################################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+######################################################################################################
+#pyATS -- USE CLI RECOMMANDED
+######################################################################################################
+# from genie.testbed import load
+# from genie.utils.diff import Diff
+# import pyats 
+
+# tb = load("pyATS-testbed/testbed.yml")
+
+# Compare the differences
+######################################################################################################
+# r1 = tb.devices["R1"]
+# r2 = tb.devices["R2"]
+
+# r1.connect()
+# r2.connect()
+# result_1 = r1.parse("show ip interface brief")
+# result_2 = r2.parse("show ip interface brief")
+# diff = Diff(result_1,result_2)
+# diff.findDiff()
+# print(diff)
+
+#result
+# R2#
+#  interface:
+#   GigabitEthernet0/0:
+# -  ip_address: 10.0.0.10
+# +  ip_address: 10.0.0.11
+######################################################################################################
+
+######################################################################################################
+#list all devices and parse show ip int bri to the devices ############ CLI IS MUCH EASYER
+# push_command = {}
+# push_command_2 = {}
+# for name,device in tb.devices.items():
+#     print ("The Device is {}".format(name))
+#     device.connect()
+#     push_command[name] = {}
+#     push_command_2[name] = {}
+#     push_command[name]['show-ip'] = device.parse('show ip interface brief')
+#     push_command_2[name]['show-ip'] = device.parse('show ip interface brief')
+######################################################################################################    
+
+# ISP1 = tb.devices["ISP"]
+# ISP1.connect()
+# print ( ISP1.parse("show ip interface brief"))

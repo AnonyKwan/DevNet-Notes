@@ -49,6 +49,8 @@ Learning Network Automation
 
 >pyats diff test1 test2   **# Compare the differences**
 
+>pyats create testbed file --path  SampleTestbedFile.xlsx --output my_testbed.yaml # **Cover CSV file to YAML testbed**
+
 ---
 > [Genie API Link](https://pubhub.devnetcloud.com/media/genie-feature-browser/docs/#/)
 
