@@ -1,16 +1,16 @@
 Building configuration...
 
   
-Current configuration : 3311 bytes
+Current configuration : 3226 bytes
 !
-! Last configuration change at 09:15:31 UTC Sun Jul 19 2020 by admin
+! Last configuration change at 03:57:36 UTC Mon Jul 20 2020 by admin
 !
 version 15.7
 service timestamps debug datetime msec
 service timestamps log datetime msec
 no service password-encryption
 !
-hostname R2
+hostname ISP
 !
 boot-start-marker
 boot-end-marker
@@ -35,10 +35,19 @@ no ip icmp rate-limit unreachable
 !
 !
 !
+ip dhcp excluded-address 10.0.0.1 10.0.0.9
+ip dhcp excluded-address 10.0.0.200 10.0.0.255
+!
+ip dhcp pool ISP
+ network 10.0.0.0 255.255.255.0
+ default-router 10.0.0.1 
+ dns-server 1.1.1.1 
+ domain-name DevNet.local
 !
 !
 !
 no ip domain lookup
+ip domain name DevNet-ISP.local
 ip cef
 no ipv6 cef
 !
@@ -47,7 +56,7 @@ multilink bundle-name authenticated
 !
 !
 !
-username admin privilege 15 secret 5 $1$QzNb$hZP43Cb9x2Qk7PDWDrxP3.
+username admin privilege 15 secret 5 $1$gWSq$DFSd5fBX1H3D7211aL9Tr/
 !
 redundancy
 !
@@ -67,17 +76,20 @@ ip tcp synwait-time 5
 !
 !
 !
+interface Loopback1
+ description CLI-CONFIG
+ ip address 1.1.1.1 255.255.255.255
+!
 interface GigabitEthernet0/0
- ip address dhcp
+ ip address 10.10.10.254 255.255.255.0
  ip ospf 10 area 0
  duplex auto
  speed auto
  media-type rj45
 !
 interface GigabitEthernet0/1
- no ip address
+ ip address 10.0.0.1 255.255.255.0
  ip ospf 10 area 0
- shutdown
  duplex auto
  speed auto
  media-type rj45
@@ -97,12 +109,20 @@ interface GigabitEthernet0/3
  media-type rj45
 !
 router ospf 10
+ router-id 1.1.1.1
+ default-information originate always
+!
+router ospf 20
 !
 ip forward-protocol nd
+!
+ip flow-aggregation cache source-prefix
+ enabled
 !
 !
 no ip http server
 no ip http secure-server
+ip route 0.0.0.0 0.0.0.0 GigabitEthernet0/0
 ip ssh version 2
 !
 ipv6 ioam timestamp
@@ -111,15 +131,6 @@ ipv6 ioam timestamp
 !
 control-plane
 !
-banner exec ^C
-**************************************************************************
-* IOSv is strictly limited to use for evaluation, demonstration and IOS  *
-* education. IOSv is provided as-is and is not supported by Cisco's      *
-* Technical Advisory Center. Any use or disclosure, in whole or in part, *
-* of the IOSv Software or Documentation to any third party for any       *
-* purposes is expressly prohibited except as otherwise authorized by     *
-* Cisco in writing.                                                      *
-**************************************************************************^C
 banner incoming ^C
 **************************************************************************
 * IOSv is strictly limited to use for evaluation, demonstration and IOS  *

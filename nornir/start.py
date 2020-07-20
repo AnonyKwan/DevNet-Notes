@@ -1,6 +1,7 @@
 import nornir.core
 import json
 import pprint
+import pathlib
 from datetime import date
 from nornir import InitNornir
 from nornir.plugins.functions.text import print_result
@@ -46,20 +47,67 @@ cisco_all = nr.filter(F(groups__contains="CISCO"))
 #                       config_file="config-files/delete-lo1.txt")
 
 
+######################################################################################################
+######################################################################################################
+
 
 # Backup Function / store file to backup folder
 ######################################################################################################
-def backup_config (task,commands):
-     result = task.run(task=netmiko_send_command,
-                command_string=commands,
-                enable=True)
-     task.run(task=write_file,
-              content=result.result,
-              filename="backup/{}-{}.txt".format(task.host,date.today()))
-     print("{}: Backup Successful!".format(task.host))
-
-cisco_all.run(name="Backup Configuration Files",
-              task=backup_config, # call the function send_command that i createc
-              commands="show run")
+# def backup_config (task):
+#     location = "backup/{}".format(date.today())
+#     pathlib.Path(location).mkdir(parents=True, exist_ok=True)
+#     result = task.run(task=netmiko_send_command,
+#                 command_string="show run",
+#                 enable=True)
+#     task.run(task=write_file,
+#               content=result.result,
+#               filename="{}/{}-{}.txt".format(location,task.host,date.today()))
+#     print("{}: Backup Successful!".format(task.host))
+#
+# cisco_all.run(name="Backup Configuration Files",
+#               task=backup_config) # call the function send_command that i createc
+#
 ######################################################################################################
 # print(date.today().strftime("%d-%m-%y"))
+
+# Push Bakcup Config to all Devices
+######################################################################################################
+# def push_config (task,config_date):
+#     result = task.run(task=netmiko_send_config,
+#              config_file="backup/{}/{}-{}.txt".format(config_date,task.host,config_date))
+#     return result
+#
+# cisco_all.run(name="Push Config to devices",
+#               task=push_config,
+#               config_date="2020-07-20")
+# print_result(push_config)
+######################################################################################################
+
+# Show version function
+######################################################################################################
+# def show_version(task):
+#     result = task.run(task=netmiko_send_command,
+#                       command_string="show version")
+#     print(task.host)
+#     print_result(result)
+#
+# cisco_all.run(name="Show Version",
+#               task=show_version)
+######################################################################################################
+
+#napalm_validate
+# DO NOT WORK!
+######################################################################################################
+# def config_validate (task,souce_date):
+#     result = task.run(task=netmiko_send_command,
+#                       command_string="show run")
+#
+#     result_validate = task.run(task=napalm_validate,
+#                     validation_source=result,
+#                     src="backup/{}/{}-{}.txt".format(souce_date,task.host,souce_date))
+#     print_result(result_validate)
+#
+# cisco_all.run(name="Check Config",
+#               task=config_validate,
+#               souce_date="2020-07-20")
+######################################################################################################

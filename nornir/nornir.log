@@ -1,512 +1,2430 @@
-2020-07-19 22:28:52,312 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show run'} on 3 hosts
-2020-07-19 22:29:00,842 -  nornir.core -     INFO -        run() - Running task 'write_file' with args {'content': AggregatedResult (netmiko_send_command): {'ISP-1': MultiResult: [Result: "netmiko_send_command"], 'R1': MultiResult: [Result: "netmiko_send_command"], 'R2': MultiResult: [Result: "netmiko_send_command"]}, 'filename': "backup/{'ISP-1': Host: ISP-1, 'R1': Host: R1, 'R2': Host: R2}&d-&m-&y.txt"} on 3 hosts
-2020-07-19 22:29:00,846 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'write_file' failed with traceback:
+2020-07-20 15:37:25,275 -  nornir.core -     INFO -        run() - Running task 'Backup Configuration Files' with args {'name': 'Backup Configuration Files', 'commands': 'show run'} on 3 hosts
+2020-07-20 15:37:33,718 - nornir.core.task -    ERROR -      start() - Host 'ISP-1': task 'Backup Configuration Files' failed with traceback:
 Traceback (most recent call last):
   File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
     r = self.task(self, **self.params)
-  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\files\write_file.py", line 51, in write_file
-    diff = _generate_diff(filename, content, append)
-  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\files\write_file.py", line 23, in _generate_diff
-    new_content = content.splitlines()
-AttributeError: 'AggregatedResult' object has no attribute 'splitlines'
+  File "D:/CCNP/DevNet/nornir/start.py", line 61, in backup_config
+    filename="{}}/{}-{}.txt".format(location,task.host,date.today()))
+ValueError: Single '}' encountered in format string
 
-2020-07-19 22:29:00,846 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'write_file' failed with traceback:
+2020-07-20 15:37:33,914 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'Backup Configuration Files' failed with traceback:
 Traceback (most recent call last):
   File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
     r = self.task(self, **self.params)
-  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\files\write_file.py", line 51, in write_file
-    diff = _generate_diff(filename, content, append)
-  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\files\write_file.py", line 23, in _generate_diff
-    new_content = content.splitlines()
-AttributeError: 'AggregatedResult' object has no attribute 'splitlines'
+  File "D:/CCNP/DevNet/nornir/start.py", line 61, in backup_config
+    filename="{}}/{}-{}.txt".format(location,task.host,date.today()))
+ValueError: Single '}' encountered in format string
 
-2020-07-19 22:29:00,847 - nornir.core.task -    ERROR -      start() - Host 'ISP-1': task 'write_file' failed with traceback:
+2020-07-20 15:37:33,914 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'Backup Configuration Files' failed with traceback:
 Traceback (most recent call last):
   File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
     r = self.task(self, **self.params)
-  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\files\write_file.py", line 51, in write_file
-    diff = _generate_diff(filename, content, append)
-  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\files\write_file.py", line 23, in _generate_diff
-    new_content = content.splitlines()
-AttributeError: 'AggregatedResult' object has no attribute 'splitlines'
+  File "D:/CCNP/DevNet/nornir/start.py", line 61, in backup_config
+    filename="{}}/{}-{}.txt".format(location,task.host,date.today()))
+ValueError: Single '}' encountered in format string
 
-2020-07-19 22:56:13,019 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show version', 'enable': True} on 3 hosts
-2020-07-19 22:57:01,762 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show version', 'enable': True} on 3 hosts
-2020-07-19 22:57:34,976 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show version', 'enable': True} on 3 hosts
-2020-07-19 22:59:48,779 -  nornir.core -     INFO -        run() - Running task <function send_command at 0x000002459296B940> with args {'name': <function send_command at 0x000002459296B940>, 'command': 'show version'} on 3 hosts
-2020-07-19 23:00:26,967 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'name': 'send_command', 'command': 'show version'} on 3 hosts
-2020-07-19 23:02:33,746 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'name': 'send_command', 'command': ['show version', 'show ip int bri']} on 3 hosts
-2020-07-19 23:02:33,748 - nornir.core.task -    ERROR -      start() - Host 'ISP-1': task 'send_command' failed with traceback:
+2020-07-20 15:38:04,766 -  nornir.core -     INFO -        run() - Running task 'Backup Configuration Files' with args {'name': 'Backup Configuration Files', 'commands': 'show run'} on 3 hosts
+2020-07-20 15:46:17,371 -  nornir.core -     INFO -        run() - Running task 'Push Config to devices' with args {'name': 'Push Config to devices', 'config_date': '2020-07-20'} on 3 hosts
+2020-07-20 15:46:57,109 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'netmiko_send_config' failed with traceback:
 Traceback (most recent call last):
   File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
     r = self.task(self, **self.params)
-TypeError: send_command() got an unexpected keyword argument 'command'
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\networking\netmiko_send_config.py", line 29, in netmiko_send_config
+    result = net_connect.send_config_from_file(config_file=config_file, **kwargs)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 1672, in send_config_from_file
+    return self.send_config_set(cfg_file, **kwargs)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 1757, in send_config_set
+    new_output = self.read_until_pattern(pattern=re.escape(cmd.strip()))
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 627, in read_until_pattern
+    return self._read_channel_expect(*args, **kwargs)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 552, in _read_channel_expect
+    raise EOFError("Channel stream closed by remote device.")
+EOFError: Channel stream closed by remote device.
 
-2020-07-19 23:02:33,749 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'send_command' failed with traceback:
+2020-07-20 15:46:57,110 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_send_config' failed with traceback:
 Traceback (most recent call last):
   File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
     r = self.task(self, **self.params)
-TypeError: send_command() got an unexpected keyword argument 'command'
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\networking\netmiko_send_config.py", line 29, in netmiko_send_config
+    result = net_connect.send_config_from_file(config_file=config_file, **kwargs)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 1672, in send_config_from_file
+    return self.send_config_set(cfg_file, **kwargs)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 1757, in send_config_set
+    new_output = self.read_until_pattern(pattern=re.escape(cmd.strip()))
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 627, in read_until_pattern
+    return self._read_channel_expect(*args, **kwargs)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 552, in _read_channel_expect
+    raise EOFError("Channel stream closed by remote device.")
+EOFError: Channel stream closed by remote device.
 
-2020-07-19 23:02:33,749 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'send_command' failed with traceback:
+2020-07-20 15:46:57,110 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'Push Config to devices' failed with traceback:
 Traceback (most recent call last):
   File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
     r = self.task(self, **self.params)
-TypeError: send_command() got an unexpected keyword argument 'command'
-
-2020-07-19 23:02:56,733 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'name': 'send_command', 'commands': ['show version', 'show ip int bri']} on 3 hosts
-2020-07-19 23:03:02,256 - nornir.core.task -    ERROR -      start() - Host 'ISP-1': task 'netmiko_send_command' failed with traceback:
-Traceback (most recent call last):
-  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
-    r = self.task(self, **self.params)
-  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\networking\netmiko_send_command.py", line 32, in netmiko_send_command
-    result = net_connect.send_command(command_string, **kwargs)
-  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\utilities.py", line 347, in wrapper_decorator
-    return func(self, *args, **kwargs)
-  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 1379, in send_command
-    command_string = self.normalize_cmd(command_string)
-  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 1533, in normalize_cmd
-    command = command.rstrip()
-AttributeError: 'list' object has no attribute 'rstrip'
-
-2020-07-19 23:03:02,257 - nornir.core.task -    ERROR -      start() - Host 'ISP-1': task 'send_command' failed with traceback:
-Traceback (most recent call last):
-  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
-    r = self.task(self, **self.params)
-  File "D:/CCNP/DevNet/nornir/start.py", line 49, in send_command
-    task.run(task=netmiko_send_command,
+  File "D:/CCNP/DevNet/nornir/start.py", line 73, in push_config
+    result = task.run(task=netmiko_send_config,
   File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 147, in run
     raise NornirSubTaskError(task=task, result=r)
-nornir.core.exceptions.NornirSubTaskError: Subtask: <function netmiko_send_command at 0x000001678C68F550> (failed)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function netmiko_send_config at 0x000001CB0E73F670> (failed)
 
 
-2020-07-19 23:03:02,532 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_send_command' failed with traceback:
+2020-07-20 15:46:57,111 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'Push Config to devices' failed with traceback:
 Traceback (most recent call last):
   File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
     r = self.task(self, **self.params)
-  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\networking\netmiko_send_command.py", line 32, in netmiko_send_command
-    result = net_connect.send_command(command_string, **kwargs)
-  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\utilities.py", line 347, in wrapper_decorator
-    return func(self, *args, **kwargs)
-  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 1379, in send_command
-    command_string = self.normalize_cmd(command_string)
-  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 1533, in normalize_cmd
-    command = command.rstrip()
-AttributeError: 'list' object has no attribute 'rstrip'
-
-2020-07-19 23:03:02,533 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'send_command' failed with traceback:
-Traceback (most recent call last):
-  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
-    r = self.task(self, **self.params)
-  File "D:/CCNP/DevNet/nornir/start.py", line 49, in send_command
-    task.run(task=netmiko_send_command,
+  File "D:/CCNP/DevNet/nornir/start.py", line 73, in push_config
+    result = task.run(task=netmiko_send_config,
   File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 147, in run
     raise NornirSubTaskError(task=task, result=r)
-nornir.core.exceptions.NornirSubTaskError: Subtask: <function netmiko_send_command at 0x000001678C68F550> (failed)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function netmiko_send_config at 0x000001CB0E73F670> (failed)
 
 
-2020-07-19 23:03:02,547 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'netmiko_send_command' failed with traceback:
+2020-07-20 15:46:59,805 - nornir.core.task -    ERROR -      start() - Host 'ISP-1': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\channel.py", line 699, in recv
+    out = self.in_buffer.read(nbytes, self.timeout)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\buffered_pipe.py", line 164, in read
+    raise PipeTimeout()
+paramiko.buffered_pipe.PipeTimeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 550, in _read_channel_expect
+    new_data = self.remote_conn.recv(MAX_BUFFER)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\channel.py", line 701, in recv
+    raise socket.timeout()
+socket.timeout
+
+During handling of the above exception, another exception occurred:
+
 Traceback (most recent call last):
   File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
     r = self.task(self, **self.params)
-  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\networking\netmiko_send_command.py", line 32, in netmiko_send_command
-    result = net_connect.send_command(command_string, **kwargs)
-  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\utilities.py", line 347, in wrapper_decorator
-    return func(self, *args, **kwargs)
-  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 1379, in send_command
-    command_string = self.normalize_cmd(command_string)
-  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 1533, in normalize_cmd
-    command = command.rstrip()
-AttributeError: 'list' object has no attribute 'rstrip'
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\networking\netmiko_send_config.py", line 29, in netmiko_send_config
+    result = net_connect.send_config_from_file(config_file=config_file, **kwargs)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 1672, in send_config_from_file
+    return self.send_config_set(cfg_file, **kwargs)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 1766, in send_config_set
+    new_output = self.read_until_pattern(pattern=pattern)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 627, in read_until_pattern
+    return self._read_channel_expect(*args, **kwargs)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 560, in _read_channel_expect
+    raise NetmikoTimeoutException(
+netmiko.ssh_exception.NetmikoTimeoutException: Timed-out reading channel, data not available.
 
-2020-07-19 23:03:02,548 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'send_command' failed with traceback:
+2020-07-20 15:46:59,806 - nornir.core.task -    ERROR -      start() - Host 'ISP-1': task 'Push Config to devices' failed with traceback:
 Traceback (most recent call last):
   File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
     r = self.task(self, **self.params)
-  File "D:/CCNP/DevNet/nornir/start.py", line 49, in send_command
-    task.run(task=netmiko_send_command,
+  File "D:/CCNP/DevNet/nornir/start.py", line 73, in push_config
+    result = task.run(task=netmiko_send_config,
   File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 147, in run
     raise NornirSubTaskError(task=task, result=r)
-nornir.core.exceptions.NornirSubTaskError: Subtask: <function netmiko_send_command at 0x000001678C68F550> (failed)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function netmiko_send_config at 0x000001CB0E73F670> (failed)
 
 
-2020-07-19 23:04:28,862 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'name': 'send_command', 'commands': 'show ip int bri'} on 3 hosts
-2020-07-19 23:14:14,475 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'name': 'send_command', 'commands': 'show ip int bri'} on 3 hosts
-2020-07-19 23:14:20,377 - nornir.core.task -    ERROR -      start() - Host 'ISP-1': task 'send_command' failed with traceback:
+2020-07-20 15:48:31,496 -  nornir.core -     INFO -        run() - Running task 'Push Config to devices' with args {'name': 'Push Config to devices', 'config_date': '2020-07-20'} on 3 hosts
+2020-07-20 15:48:52,611 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 899, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\client.py", line 349, in connect
+    retry_on_signal(lambda: sock.connect(addr))
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\util.py", line 283, in retry_on_signal
+    return function()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\client.py", line 349, in <lambda>
+    retry_on_signal(lambda: sock.connect(addr))
+TimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+During handling of the above exception, another exception occurred:
+
 Traceback (most recent call last):
   File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
     r = self.task(self, **self.params)
-  File "D:/CCNP/DevNet/nornir/start.py", line 54, in send_command
-    filename="{}.txt".format(task.inventory.host))
-AttributeError: 'Task' object has no attribute 'inventory'
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\networking\netmiko_send_config.py", line 24, in netmiko_send_config
+    net_connect = task.host.get_connection("netmiko", task.nornir.config)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\inventory.py", line 294, in get_connection
+    self.open_connection(
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\inventory.py", line 345, in open_connection
+    self.connections[connection].open(
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\connections\netmiko.py", line 58, in open
+    self.connection = ConnectHandler(**parameters)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\ssh_dispatcher.py", line 266, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 327, in __init__
+    self._open()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 332, in _open
+    self.establish_connection()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 905, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.ssh_exception.NetmikoTimeoutException: Connection to device timed-out: cisco_ios 10.0.0.11:22
 
-2020-07-19 23:14:20,694 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'send_command' failed with traceback:
+2020-07-20 15:48:52,612 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 899, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\client.py", line 349, in connect
+    retry_on_signal(lambda: sock.connect(addr))
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\util.py", line 283, in retry_on_signal
+    return function()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\client.py", line 349, in <lambda>
+    retry_on_signal(lambda: sock.connect(addr))
+TimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+During handling of the above exception, another exception occurred:
+
 Traceback (most recent call last):
   File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
     r = self.task(self, **self.params)
-  File "D:/CCNP/DevNet/nornir/start.py", line 54, in send_command
-    filename="{}.txt".format(task.inventory.host))
-AttributeError: 'Task' object has no attribute 'inventory'
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\networking\netmiko_send_config.py", line 24, in netmiko_send_config
+    net_connect = task.host.get_connection("netmiko", task.nornir.config)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\inventory.py", line 294, in get_connection
+    self.open_connection(
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\inventory.py", line 345, in open_connection
+    self.connections[connection].open(
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\connections\netmiko.py", line 58, in open
+    self.connection = ConnectHandler(**parameters)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\ssh_dispatcher.py", line 266, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 327, in __init__
+    self._open()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 332, in _open
+    self.establish_connection()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 905, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.ssh_exception.NetmikoTimeoutException: Connection to device timed-out: cisco_ios 10.0.0.10:22
 
-2020-07-19 23:14:20,731 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'send_command' failed with traceback:
+2020-07-20 15:48:52,613 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'Push Config to devices' failed with traceback:
 Traceback (most recent call last):
   File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
     r = self.task(self, **self.params)
-  File "D:/CCNP/DevNet/nornir/start.py", line 54, in send_command
-    filename="{}.txt".format(task.inventory.host))
-AttributeError: 'Task' object has no attribute 'inventory'
-
-2020-07-19 23:15:33,242 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'name': 'send_command', 'commands': 'show ip int bri'} on 3 hosts
-2020-07-19 23:15:39,074 - nornir.core.task -    ERROR -      start() - Host 'ISP-1': task 'send_command' failed with traceback:
-Traceback (most recent call last):
-  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
-    r = self.task(self, **self.params)
-  File "D:/CCNP/DevNet/nornir/start.py", line 54, in send_command
-    filename="{}.txt".format(task.inventory.hosts))
-AttributeError: 'Task' object has no attribute 'inventory'
-
-2020-07-19 23:15:39,881 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'send_command' failed with traceback:
-Traceback (most recent call last):
-  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
-    r = self.task(self, **self.params)
-  File "D:/CCNP/DevNet/nornir/start.py", line 54, in send_command
-    filename="{}.txt".format(task.inventory.hosts))
-AttributeError: 'Task' object has no attribute 'inventory'
-
-2020-07-19 23:15:39,884 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'send_command' failed with traceback:
-Traceback (most recent call last):
-  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
-    r = self.task(self, **self.params)
-  File "D:/CCNP/DevNet/nornir/start.py", line 54, in send_command
-    filename="{}.txt".format(task.inventory.hosts))
-AttributeError: 'Task' object has no attribute 'inventory'
-
-2020-07-19 23:16:11,738 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'name': 'send_command', 'commands': 'show ip int bri'} on 3 hosts
-2020-07-19 23:16:17,635 - nornir.core.task -    ERROR -      start() - Host 'ISP-1': task 'write_file' failed with traceback:
-Traceback (most recent call last):
-  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
-    r = self.task(self, **self.params)
-  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\files\write_file.py", line 55, in write_file
-    with open(filename, mode=mode) as f:
-OSError: [Errno 22] Invalid argument: "{'ISP-1': Host: ISP-1, 'R1': Host: R1, 'R2': Host: R2}.txt"
-
-2020-07-19 23:16:17,636 - nornir.core.task -    ERROR -      start() - Host 'ISP-1': task 'send_command' failed with traceback:
-Traceback (most recent call last):
-  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
-    r = self.task(self, **self.params)
-  File "D:/CCNP/DevNet/nornir/start.py", line 52, in send_command
-    task.run(task=write_file,
+  File "D:/CCNP/DevNet/nornir/start.py", line 73, in push_config
+    result = task.run(task=netmiko_send_config,
   File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 147, in run
     raise NornirSubTaskError(task=task, result=r)
-nornir.core.exceptions.NornirSubTaskError: Subtask: <function write_file at 0x00000170D054A670> (failed)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function netmiko_send_config at 0x000001E8FAB7F670> (failed)
 
 
-2020-07-19 23:16:17,954 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'write_file' failed with traceback:
+2020-07-20 15:48:52,613 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'Push Config to devices' failed with traceback:
 Traceback (most recent call last):
   File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
     r = self.task(self, **self.params)
-  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\files\write_file.py", line 55, in write_file
-    with open(filename, mode=mode) as f:
-OSError: [Errno 22] Invalid argument: "{'ISP-1': Host: ISP-1, 'R1': Host: R1, 'R2': Host: R2}.txt"
-
-2020-07-19 23:16:17,954 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'send_command' failed with traceback:
-Traceback (most recent call last):
-  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
-    r = self.task(self, **self.params)
-  File "D:/CCNP/DevNet/nornir/start.py", line 52, in send_command
-    task.run(task=write_file,
+  File "D:/CCNP/DevNet/nornir/start.py", line 73, in push_config
+    result = task.run(task=netmiko_send_config,
   File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 147, in run
     raise NornirSubTaskError(task=task, result=r)
-nornir.core.exceptions.NornirSubTaskError: Subtask: <function write_file at 0x00000170D054A670> (failed)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function netmiko_send_config at 0x000001E8FAB7F670> (failed)
 
 
-2020-07-19 23:16:17,983 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'write_file' failed with traceback:
+2020-07-20 15:49:13,027 - nornir.core.task -    ERROR -      start() - Host 'ISP-1': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\channel.py", line 699, in recv
+    out = self.in_buffer.read(nbytes, self.timeout)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\buffered_pipe.py", line 164, in read
+    raise PipeTimeout()
+paramiko.buffered_pipe.PipeTimeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 550, in _read_channel_expect
+    new_data = self.remote_conn.recv(MAX_BUFFER)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\channel.py", line 701, in recv
+    raise socket.timeout()
+socket.timeout
+
+During handling of the above exception, another exception occurred:
+
 Traceback (most recent call last):
   File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
     r = self.task(self, **self.params)
-  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\files\write_file.py", line 55, in write_file
-    with open(filename, mode=mode) as f:
-OSError: [Errno 22] Invalid argument: "{'ISP-1': Host: ISP-1, 'R1': Host: R1, 'R2': Host: R2}.txt"
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\networking\netmiko_send_config.py", line 29, in netmiko_send_config
+    result = net_connect.send_config_from_file(config_file=config_file, **kwargs)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 1672, in send_config_from_file
+    return self.send_config_set(cfg_file, **kwargs)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 1766, in send_config_set
+    new_output = self.read_until_pattern(pattern=pattern)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 627, in read_until_pattern
+    return self._read_channel_expect(*args, **kwargs)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 560, in _read_channel_expect
+    raise NetmikoTimeoutException(
+netmiko.ssh_exception.NetmikoTimeoutException: Timed-out reading channel, data not available.
 
-2020-07-19 23:16:17,984 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'send_command' failed with traceback:
+2020-07-20 15:49:13,027 - nornir.core.task -    ERROR -      start() - Host 'ISP-1': task 'Push Config to devices' failed with traceback:
 Traceback (most recent call last):
   File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
     r = self.task(self, **self.params)
-  File "D:/CCNP/DevNet/nornir/start.py", line 52, in send_command
-    task.run(task=write_file,
+  File "D:/CCNP/DevNet/nornir/start.py", line 73, in push_config
+    result = task.run(task=netmiko_send_config,
   File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 147, in run
     raise NornirSubTaskError(task=task, result=r)
-nornir.core.exceptions.NornirSubTaskError: Subtask: <function write_file at 0x00000170D054A670> (failed)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function netmiko_send_config at 0x000001E8FAB7F670> (failed)
 
 
-2020-07-19 23:18:08,364 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'name': 'send_command', 'commands': 'show ip int bri'} on 3 hosts
-2020-07-19 23:18:14,286 - nornir.core.task -    ERROR -      start() - Host 'ISP-1': task 'send_command' failed with traceback:
+2020-07-20 15:51:16,597 -  nornir.core -     INFO -        run() - Running task 'Push Config to devices' with args {'name': 'Push Config to devices', 'config_date': '2020-07-20'} on 3 hosts
+2020-07-20 15:51:37,607 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 899, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\client.py", line 349, in connect
+    retry_on_signal(lambda: sock.connect(addr))
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\util.py", line 283, in retry_on_signal
+    return function()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\client.py", line 349, in <lambda>
+    retry_on_signal(lambda: sock.connect(addr))
+TimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+During handling of the above exception, another exception occurred:
+
 Traceback (most recent call last):
   File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
     r = self.task(self, **self.params)
-  File "D:/CCNP/DevNet/nornir/start.py", line 54, in send_command
-    filename="{}.txt".format(task.hosts))
-AttributeError: 'Task' object has no attribute 'hosts'
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\networking\netmiko_send_config.py", line 24, in netmiko_send_config
+    net_connect = task.host.get_connection("netmiko", task.nornir.config)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\inventory.py", line 294, in get_connection
+    self.open_connection(
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\inventory.py", line 345, in open_connection
+    self.connections[connection].open(
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\connections\netmiko.py", line 58, in open
+    self.connection = ConnectHandler(**parameters)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\ssh_dispatcher.py", line 266, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 327, in __init__
+    self._open()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 332, in _open
+    self.establish_connection()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 905, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.ssh_exception.NetmikoTimeoutException: Connection to device timed-out: cisco_ios 10.0.0.10:22
 
-2020-07-19 23:18:14,602 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'send_command' failed with traceback:
+2020-07-20 15:51:37,608 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 899, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\client.py", line 349, in connect
+    retry_on_signal(lambda: sock.connect(addr))
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\util.py", line 283, in retry_on_signal
+    return function()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\client.py", line 349, in <lambda>
+    retry_on_signal(lambda: sock.connect(addr))
+TimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+During handling of the above exception, another exception occurred:
+
 Traceback (most recent call last):
   File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
     r = self.task(self, **self.params)
-  File "D:/CCNP/DevNet/nornir/start.py", line 54, in send_command
-    filename="{}.txt".format(task.hosts))
-AttributeError: 'Task' object has no attribute 'hosts'
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\networking\netmiko_send_config.py", line 24, in netmiko_send_config
+    net_connect = task.host.get_connection("netmiko", task.nornir.config)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\inventory.py", line 294, in get_connection
+    self.open_connection(
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\inventory.py", line 345, in open_connection
+    self.connections[connection].open(
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\connections\netmiko.py", line 58, in open
+    self.connection = ConnectHandler(**parameters)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\ssh_dispatcher.py", line 266, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 327, in __init__
+    self._open()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 332, in _open
+    self.establish_connection()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 905, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.ssh_exception.NetmikoTimeoutException: Connection to device timed-out: cisco_ios 10.0.0.11:22
 
-2020-07-19 23:18:14,610 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'send_command' failed with traceback:
+2020-07-20 15:51:37,608 - nornir.core.task -    ERROR -      start() - Host 'ISP-1': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 899, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\client.py", line 349, in connect
+    retry_on_signal(lambda: sock.connect(addr))
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\util.py", line 283, in retry_on_signal
+    return function()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\client.py", line 349, in <lambda>
+    retry_on_signal(lambda: sock.connect(addr))
+TimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+During handling of the above exception, another exception occurred:
+
 Traceback (most recent call last):
   File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
     r = self.task(self, **self.params)
-  File "D:/CCNP/DevNet/nornir/start.py", line 54, in send_command
-    filename="{}.txt".format(task.hosts))
-AttributeError: 'Task' object has no attribute 'hosts'
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\networking\netmiko_send_config.py", line 24, in netmiko_send_config
+    net_connect = task.host.get_connection("netmiko", task.nornir.config)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\inventory.py", line 294, in get_connection
+    self.open_connection(
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\inventory.py", line 345, in open_connection
+    self.connections[connection].open(
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\connections\netmiko.py", line 58, in open
+    self.connection = ConnectHandler(**parameters)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\ssh_dispatcher.py", line 266, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 327, in __init__
+    self._open()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 332, in _open
+    self.establish_connection()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 905, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.ssh_exception.NetmikoTimeoutException: Connection to device timed-out: cisco_ios 10.0.0.1:22
 
-2020-07-19 23:18:31,780 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'name': 'send_command', 'commands': 'show ip int bri'} on 3 hosts
-2020-07-19 23:19:39,623 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'name': 'send_command', 'commands': 'show ip int bri'} on 3 hosts
-2020-07-19 23:19:45,403 - nornir.core.task -    ERROR -      start() - Host 'ISP-1': task 'write_file' failed with traceback:
+2020-07-20 15:51:37,610 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'Push Config to devices' failed with traceback:
 Traceback (most recent call last):
   File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
     r = self.task(self, **self.params)
-  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\files\write_file.py", line 55, in write_file
-    with open(filename, mode=mode) as f:
-FileNotFoundError: [Errno 2] No such file or directory: 'int/ISP-1.txt'
-
-2020-07-19 23:19:45,403 - nornir.core.task -    ERROR -      start() - Host 'ISP-1': task 'send_command' failed with traceback:
-Traceback (most recent call last):
-  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
-    r = self.task(self, **self.params)
-  File "D:/CCNP/DevNet/nornir/start.py", line 52, in send_command
-    task.run(task=write_file,
+  File "D:/CCNP/DevNet/nornir/start.py", line 73, in push_config
+    result = task.run(task=netmiko_send_config,
   File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 147, in run
     raise NornirSubTaskError(task=task, result=r)
-nornir.core.exceptions.NornirSubTaskError: Subtask: <function write_file at 0x000002AF19E8B670> (failed)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function netmiko_send_config at 0x000002394A0DF670> (failed)
 
 
-2020-07-19 23:19:46,032 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'write_file' failed with traceback:
+2020-07-20 15:51:37,610 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'Push Config to devices' failed with traceback:
 Traceback (most recent call last):
   File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
     r = self.task(self, **self.params)
-  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\files\write_file.py", line 55, in write_file
-    with open(filename, mode=mode) as f:
-FileNotFoundError: [Errno 2] No such file or directory: 'int/R2.txt'
-
-2020-07-19 23:19:46,032 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'send_command' failed with traceback:
-Traceback (most recent call last):
-  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
-    r = self.task(self, **self.params)
-  File "D:/CCNP/DevNet/nornir/start.py", line 52, in send_command
-    task.run(task=write_file,
+  File "D:/CCNP/DevNet/nornir/start.py", line 73, in push_config
+    result = task.run(task=netmiko_send_config,
   File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 147, in run
     raise NornirSubTaskError(task=task, result=r)
-nornir.core.exceptions.NornirSubTaskError: Subtask: <function write_file at 0x000002AF19E8B670> (failed)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function netmiko_send_config at 0x000002394A0DF670> (failed)
 
 
-2020-07-19 23:19:46,046 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'write_file' failed with traceback:
+2020-07-20 15:51:37,611 - nornir.core.task -    ERROR -      start() - Host 'ISP-1': task 'Push Config to devices' failed with traceback:
 Traceback (most recent call last):
   File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
     r = self.task(self, **self.params)
-  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\files\write_file.py", line 55, in write_file
-    with open(filename, mode=mode) as f:
-FileNotFoundError: [Errno 2] No such file or directory: 'int/R1.txt'
-
-2020-07-19 23:19:46,046 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'send_command' failed with traceback:
-Traceback (most recent call last):
-  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
-    r = self.task(self, **self.params)
-  File "D:/CCNP/DevNet/nornir/start.py", line 52, in send_command
-    task.run(task=write_file,
+  File "D:/CCNP/DevNet/nornir/start.py", line 73, in push_config
+    result = task.run(task=netmiko_send_config,
   File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 147, in run
     raise NornirSubTaskError(task=task, result=r)
-nornir.core.exceptions.NornirSubTaskError: Subtask: <function write_file at 0x000002AF19E8B670> (failed)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function netmiko_send_config at 0x000002394A0DF670> (failed)
 
 
-2020-07-19 23:20:05,255 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'name': 'send_command', 'commands': 'show ip int bri'} on 3 hosts
-2020-07-19 23:25:41,396 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'name': 'send_command', 'commands': 'show ip int bri'} on 3 hosts
-2020-07-19 23:25:47,295 - nornir.core.task -    ERROR -      start() - Host 'ISP-1': task 'write_file' failed with traceback:
+2020-07-20 15:52:21,011 -  nornir.core -     INFO -        run() - Running task 'Push Config to devices' with args {'name': 'Push Config to devices', 'config_date': '2020-07-20'} on 3 hosts
+2020-07-20 15:52:42,019 - nornir.core.task -    ERROR -      start() - Host 'ISP-1': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 899, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\client.py", line 349, in connect
+    retry_on_signal(lambda: sock.connect(addr))
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\util.py", line 283, in retry_on_signal
+    return function()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\client.py", line 349, in <lambda>
+    retry_on_signal(lambda: sock.connect(addr))
+TimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+During handling of the above exception, another exception occurred:
+
 Traceback (most recent call last):
   File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
     r = self.task(self, **self.params)
-  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\files\write_file.py", line 51, in write_file
-    diff = _generate_diff(filename, content, append)
-  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\files\write_file.py", line 23, in _generate_diff
-    new_content = content.splitlines()
-  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 262, in __getattr__
-    return getattr(self[0], name)
-AttributeError: 'Result' object has no attribute 'splitlines'
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\networking\netmiko_send_config.py", line 24, in netmiko_send_config
+    net_connect = task.host.get_connection("netmiko", task.nornir.config)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\inventory.py", line 294, in get_connection
+    self.open_connection(
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\inventory.py", line 345, in open_connection
+    self.connections[connection].open(
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\connections\netmiko.py", line 58, in open
+    self.connection = ConnectHandler(**parameters)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\ssh_dispatcher.py", line 266, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 327, in __init__
+    self._open()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 332, in _open
+    self.establish_connection()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 905, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.ssh_exception.NetmikoTimeoutException: Connection to device timed-out: cisco_ios 10.0.0.1:22
 
-2020-07-19 23:25:47,295 - nornir.core.task -    ERROR -      start() - Host 'ISP-1': task 'send_command' failed with traceback:
+2020-07-20 15:52:42,019 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 899, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\client.py", line 349, in connect
+    retry_on_signal(lambda: sock.connect(addr))
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\util.py", line 283, in retry_on_signal
+    return function()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\client.py", line 349, in <lambda>
+    retry_on_signal(lambda: sock.connect(addr))
+TimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+During handling of the above exception, another exception occurred:
+
 Traceback (most recent call last):
   File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
     r = self.task(self, **self.params)
-  File "D:/CCNP/DevNet/nornir/start.py", line 52, in send_command
-    task.run(task=write_file,
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\networking\netmiko_send_config.py", line 24, in netmiko_send_config
+    net_connect = task.host.get_connection("netmiko", task.nornir.config)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\inventory.py", line 294, in get_connection
+    self.open_connection(
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\inventory.py", line 345, in open_connection
+    self.connections[connection].open(
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\connections\netmiko.py", line 58, in open
+    self.connection = ConnectHandler(**parameters)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\ssh_dispatcher.py", line 266, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 327, in __init__
+    self._open()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 332, in _open
+    self.establish_connection()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 905, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.ssh_exception.NetmikoTimeoutException: Connection to device timed-out: cisco_ios 10.0.0.10:22
+
+2020-07-20 15:52:42,020 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 899, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\client.py", line 349, in connect
+    retry_on_signal(lambda: sock.connect(addr))
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\util.py", line 283, in retry_on_signal
+    return function()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\client.py", line 349, in <lambda>
+    retry_on_signal(lambda: sock.connect(addr))
+TimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\networking\netmiko_send_config.py", line 24, in netmiko_send_config
+    net_connect = task.host.get_connection("netmiko", task.nornir.config)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\inventory.py", line 294, in get_connection
+    self.open_connection(
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\inventory.py", line 345, in open_connection
+    self.connections[connection].open(
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\connections\netmiko.py", line 58, in open
+    self.connection = ConnectHandler(**parameters)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\ssh_dispatcher.py", line 266, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 327, in __init__
+    self._open()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 332, in _open
+    self.establish_connection()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 905, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.ssh_exception.NetmikoTimeoutException: Connection to device timed-out: cisco_ios 10.0.0.11:22
+
+2020-07-20 15:52:42,021 - nornir.core.task -    ERROR -      start() - Host 'ISP-1': task 'Push Config to devices' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:/CCNP/DevNet/nornir/start.py", line 73, in push_config
+    result = task.run(task=netmiko_send_config,
   File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 147, in run
     raise NornirSubTaskError(task=task, result=r)
-nornir.core.exceptions.NornirSubTaskError: Subtask: <function write_file at 0x000001BD6710B670> (failed)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function netmiko_send_config at 0x000001A568A5F670> (failed)
 
 
-2020-07-19 23:25:47,571 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'write_file' failed with traceback:
+2020-07-20 15:52:42,021 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'Push Config to devices' failed with traceback:
 Traceback (most recent call last):
   File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
     r = self.task(self, **self.params)
-  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\files\write_file.py", line 51, in write_file
-    diff = _generate_diff(filename, content, append)
-  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\files\write_file.py", line 23, in _generate_diff
-    new_content = content.splitlines()
-  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 262, in __getattr__
-    return getattr(self[0], name)
-AttributeError: 'Result' object has no attribute 'splitlines'
-
-2020-07-19 23:25:47,571 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'send_command' failed with traceback:
-Traceback (most recent call last):
-  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
-    r = self.task(self, **self.params)
-  File "D:/CCNP/DevNet/nornir/start.py", line 52, in send_command
-    task.run(task=write_file,
+  File "D:/CCNP/DevNet/nornir/start.py", line 73, in push_config
+    result = task.run(task=netmiko_send_config,
   File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 147, in run
     raise NornirSubTaskError(task=task, result=r)
-nornir.core.exceptions.NornirSubTaskError: Subtask: <function write_file at 0x000001BD6710B670> (failed)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function netmiko_send_config at 0x000001A568A5F670> (failed)
 
 
-2020-07-19 23:25:47,633 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'write_file' failed with traceback:
+2020-07-20 15:52:42,022 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'Push Config to devices' failed with traceback:
 Traceback (most recent call last):
   File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
     r = self.task(self, **self.params)
-  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\files\write_file.py", line 51, in write_file
-    diff = _generate_diff(filename, content, append)
-  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\files\write_file.py", line 23, in _generate_diff
-    new_content = content.splitlines()
-  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 262, in __getattr__
-    return getattr(self[0], name)
-AttributeError: 'Result' object has no attribute 'splitlines'
-
-2020-07-19 23:25:47,633 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'send_command' failed with traceback:
-Traceback (most recent call last):
-  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
-    r = self.task(self, **self.params)
-  File "D:/CCNP/DevNet/nornir/start.py", line 52, in send_command
-    task.run(task=write_file,
+  File "D:/CCNP/DevNet/nornir/start.py", line 73, in push_config
+    result = task.run(task=netmiko_send_config,
   File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 147, in run
     raise NornirSubTaskError(task=task, result=r)
-nornir.core.exceptions.NornirSubTaskError: Subtask: <function write_file at 0x000001BD6710B670> (failed)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function netmiko_send_config at 0x000001A568A5F670> (failed)
 
 
-2020-07-19 23:26:01,922 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'name': 'send_command', 'commands': 'show ip int bri'} on 3 hosts
-2020-07-19 23:26:07,833 - nornir.core.task -    ERROR -      start() - Host 'ISP-1': task 'write_file' failed with traceback:
+2020-07-20 15:53:35,832 -  nornir.core -     INFO -        run() - Running task 'Push Config to devices' with args {'name': 'Push Config to devices', 'config_date': '2020-07-20'} on 3 hosts
+2020-07-20 15:53:56,844 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 899, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\client.py", line 349, in connect
+    retry_on_signal(lambda: sock.connect(addr))
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\util.py", line 283, in retry_on_signal
+    return function()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\client.py", line 349, in <lambda>
+    retry_on_signal(lambda: sock.connect(addr))
+TimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+During handling of the above exception, another exception occurred:
+
 Traceback (most recent call last):
   File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
     r = self.task(self, **self.params)
-TypeError: write_file() missing 1 required positional argument: 'content'
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\networking\netmiko_send_config.py", line 24, in netmiko_send_config
+    net_connect = task.host.get_connection("netmiko", task.nornir.config)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\inventory.py", line 294, in get_connection
+    self.open_connection(
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\inventory.py", line 345, in open_connection
+    self.connections[connection].open(
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\connections\netmiko.py", line 58, in open
+    self.connection = ConnectHandler(**parameters)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\ssh_dispatcher.py", line 266, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 327, in __init__
+    self._open()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 332, in _open
+    self.establish_connection()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 905, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.ssh_exception.NetmikoTimeoutException: Connection to device timed-out: cisco_ios 10.0.0.10:22
 
-2020-07-19 23:26:07,834 - nornir.core.task -    ERROR -      start() - Host 'ISP-1': task 'send_command' failed with traceback:
+2020-07-20 15:53:56,844 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 899, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\client.py", line 349, in connect
+    retry_on_signal(lambda: sock.connect(addr))
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\util.py", line 283, in retry_on_signal
+    return function()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\client.py", line 349, in <lambda>
+    retry_on_signal(lambda: sock.connect(addr))
+TimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+During handling of the above exception, another exception occurred:
+
 Traceback (most recent call last):
   File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
     r = self.task(self, **self.params)
-  File "D:/CCNP/DevNet/nornir/start.py", line 52, in send_command
-    task.run(task=write_file,
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\networking\netmiko_send_config.py", line 24, in netmiko_send_config
+    net_connect = task.host.get_connection("netmiko", task.nornir.config)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\inventory.py", line 294, in get_connection
+    self.open_connection(
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\inventory.py", line 345, in open_connection
+    self.connections[connection].open(
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\connections\netmiko.py", line 58, in open
+    self.connection = ConnectHandler(**parameters)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\ssh_dispatcher.py", line 266, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 327, in __init__
+    self._open()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 332, in _open
+    self.establish_connection()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 905, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.ssh_exception.NetmikoTimeoutException: Connection to device timed-out: cisco_ios 10.0.0.11:22
+
+2020-07-20 15:53:56,845 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'Push Config to devices' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:/CCNP/DevNet/nornir/start.py", line 73, in push_config
+    result = task.run(task=netmiko_send_config,
   File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 147, in run
     raise NornirSubTaskError(task=task, result=r)
-nornir.core.exceptions.NornirSubTaskError: Subtask: <function write_file at 0x0000027A9139B670> (failed)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function netmiko_send_config at 0x000001D54EC7F670> (failed)
 
 
-2020-07-19 23:26:08,163 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'write_file' failed with traceback:
+2020-07-20 15:53:56,845 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'Push Config to devices' failed with traceback:
 Traceback (most recent call last):
   File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
     r = self.task(self, **self.params)
-TypeError: write_file() missing 1 required positional argument: 'content'
-
-2020-07-19 23:26:08,163 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'send_command' failed with traceback:
-Traceback (most recent call last):
-  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
-    r = self.task(self, **self.params)
-  File "D:/CCNP/DevNet/nornir/start.py", line 52, in send_command
-    task.run(task=write_file,
+  File "D:/CCNP/DevNet/nornir/start.py", line 73, in push_config
+    result = task.run(task=netmiko_send_config,
   File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 147, in run
     raise NornirSubTaskError(task=task, result=r)
-nornir.core.exceptions.NornirSubTaskError: Subtask: <function write_file at 0x0000027A9139B670> (failed)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function netmiko_send_config at 0x000001D54EC7F670> (failed)
 
 
-2020-07-19 23:26:08,175 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'write_file' failed with traceback:
+2020-07-20 15:54:17,368 - nornir.core.task -    ERROR -      start() - Host 'ISP-1': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\channel.py", line 699, in recv
+    out = self.in_buffer.read(nbytes, self.timeout)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\buffered_pipe.py", line 164, in read
+    raise PipeTimeout()
+paramiko.buffered_pipe.PipeTimeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 550, in _read_channel_expect
+    new_data = self.remote_conn.recv(MAX_BUFFER)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\channel.py", line 701, in recv
+    raise socket.timeout()
+socket.timeout
+
+During handling of the above exception, another exception occurred:
+
 Traceback (most recent call last):
   File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
     r = self.task(self, **self.params)
-TypeError: write_file() missing 1 required positional argument: 'content'
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\networking\netmiko_send_config.py", line 29, in netmiko_send_config
+    result = net_connect.send_config_from_file(config_file=config_file, **kwargs)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 1672, in send_config_from_file
+    return self.send_config_set(cfg_file, **kwargs)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 1766, in send_config_set
+    new_output = self.read_until_pattern(pattern=pattern)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 627, in read_until_pattern
+    return self._read_channel_expect(*args, **kwargs)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 560, in _read_channel_expect
+    raise NetmikoTimeoutException(
+netmiko.ssh_exception.NetmikoTimeoutException: Timed-out reading channel, data not available.
 
-2020-07-19 23:26:08,176 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'send_command' failed with traceback:
+2020-07-20 15:54:17,369 - nornir.core.task -    ERROR -      start() - Host 'ISP-1': task 'Push Config to devices' failed with traceback:
 Traceback (most recent call last):
   File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
     r = self.task(self, **self.params)
-  File "D:/CCNP/DevNet/nornir/start.py", line 52, in send_command
-    task.run(task=write_file,
+  File "D:/CCNP/DevNet/nornir/start.py", line 73, in push_config
+    result = task.run(task=netmiko_send_config,
   File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 147, in run
     raise NornirSubTaskError(task=task, result=r)
-nornir.core.exceptions.NornirSubTaskError: Subtask: <function write_file at 0x0000027A9139B670> (failed)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function netmiko_send_config at 0x000001D54EC7F670> (failed)
 
 
-2020-07-19 23:28:18,204 -  nornir.core -     INFO -        run() - Running task 'Backup Configuration Files' with args {'name': 'Backup Configuration Files', 'commands': 'show ip int bri'} on 3 hosts
-2020-07-19 23:28:58,405 -  nornir.core -     INFO -        run() - Running task 'Backup Configuration Files' with args {'name': 'Backup Configuration Files', 'commands': 'show run'} on 3 hosts
-2020-07-19 23:30:49,861 -  nornir.core -     INFO -        run() - Running task 'Backup Configuration Files' with args {'name': 'Backup Configuration Files', 'commands': 'show run'} on 3 hosts
-2020-07-19 23:32:11,157 -  nornir.core -     INFO -        run() - Running task 'Backup Configuration Files' with args {'name': 'Backup Configuration Files', 'commands': 'show run'} on 3 hosts
-2020-07-19 23:32:48,580 -  nornir.core -     INFO -        run() - Running task 'Backup Configuration Files' with args {'name': 'Backup Configuration Files', 'commands': 'show run'} on 3 hosts
-2020-07-19 23:44:46,557 -  nornir.core -     INFO -        run() - Running task 'Backup Configuration Files' with args {'name': 'Backup Configuration Files', 'commands': 'show run'} on 3 hosts
-2020-07-19 23:44:54,662 - nornir.core.task -    ERROR -      start() - Host 'ISP-1': task 'write_file' failed with traceback:
+2020-07-20 15:54:28,705 -  nornir.core -     INFO -        run() - Running task 'Push Config to devices' with args {'name': 'Push Config to devices', 'config_date': '2020-07-20'} on 3 hosts
+2020-07-20 15:54:49,713 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 899, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\client.py", line 349, in connect
+    retry_on_signal(lambda: sock.connect(addr))
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\util.py", line 283, in retry_on_signal
+    return function()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\client.py", line 349, in <lambda>
+    retry_on_signal(lambda: sock.connect(addr))
+TimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+During handling of the above exception, another exception occurred:
+
 Traceback (most recent call last):
   File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
     r = self.task(self, **self.params)
-  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\files\write_file.py", line 55, in write_file
-    with open(filename, mode=mode) as f:
-OSError: [Errno 22] Invalid argument: 'backup/ISP-1-<built-in method now of type object at 0x00007FF8BF4C7530>.txt'
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\networking\netmiko_send_config.py", line 24, in netmiko_send_config
+    net_connect = task.host.get_connection("netmiko", task.nornir.config)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\inventory.py", line 294, in get_connection
+    self.open_connection(
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\inventory.py", line 345, in open_connection
+    self.connections[connection].open(
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\connections\netmiko.py", line 58, in open
+    self.connection = ConnectHandler(**parameters)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\ssh_dispatcher.py", line 266, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 327, in __init__
+    self._open()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 332, in _open
+    self.establish_connection()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 905, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.ssh_exception.NetmikoTimeoutException: Connection to device timed-out: cisco_ios 10.0.0.10:22
 
-2020-07-19 23:44:54,663 - nornir.core.task -    ERROR -      start() - Host 'ISP-1': task 'Backup Configuration Files' failed with traceback:
+2020-07-20 15:54:49,714 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 899, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\client.py", line 349, in connect
+    retry_on_signal(lambda: sock.connect(addr))
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\util.py", line 283, in retry_on_signal
+    return function()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\client.py", line 349, in <lambda>
+    retry_on_signal(lambda: sock.connect(addr))
+TimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+During handling of the above exception, another exception occurred:
+
 Traceback (most recent call last):
   File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
     r = self.task(self, **self.params)
-  File "D:/CCNP/DevNet/nornir/start.py", line 56, in backup_config
-    task.run(task=write_file,
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\networking\netmiko_send_config.py", line 24, in netmiko_send_config
+    net_connect = task.host.get_connection("netmiko", task.nornir.config)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\inventory.py", line 294, in get_connection
+    self.open_connection(
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\inventory.py", line 345, in open_connection
+    self.connections[connection].open(
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\connections\netmiko.py", line 58, in open
+    self.connection = ConnectHandler(**parameters)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\ssh_dispatcher.py", line 266, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 327, in __init__
+    self._open()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 332, in _open
+    self.establish_connection()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 905, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.ssh_exception.NetmikoTimeoutException: Connection to device timed-out: cisco_ios 10.0.0.11:22
+
+2020-07-20 15:54:49,715 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'Push Config to devices' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:/CCNP/DevNet/nornir/start.py", line 73, in push_config
+    result = task.run(task=netmiko_send_config,
   File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 147, in run
     raise NornirSubTaskError(task=task, result=r)
-nornir.core.exceptions.NornirSubTaskError: Subtask: <function write_file at 0x0000027C161AB670> (failed)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function netmiko_send_config at 0x000001675F1EF670> (failed)
 
 
-2020-07-19 23:44:54,981 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'write_file' failed with traceback:
+2020-07-20 15:54:49,715 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'Push Config to devices' failed with traceback:
 Traceback (most recent call last):
   File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
     r = self.task(self, **self.params)
-  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\files\write_file.py", line 55, in write_file
-    with open(filename, mode=mode) as f:
-OSError: [Errno 22] Invalid argument: 'backup/R1-<built-in method now of type object at 0x00007FF8BF4C7530>.txt'
-
-2020-07-19 23:44:54,982 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'Backup Configuration Files' failed with traceback:
-Traceback (most recent call last):
-  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
-    r = self.task(self, **self.params)
-  File "D:/CCNP/DevNet/nornir/start.py", line 56, in backup_config
-    task.run(task=write_file,
+  File "D:/CCNP/DevNet/nornir/start.py", line 73, in push_config
+    result = task.run(task=netmiko_send_config,
   File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 147, in run
     raise NornirSubTaskError(task=task, result=r)
-nornir.core.exceptions.NornirSubTaskError: Subtask: <function write_file at 0x0000027C161AB670> (failed)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function netmiko_send_config at 0x000001675F1EF670> (failed)
 
 
-2020-07-19 23:44:55,131 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'write_file' failed with traceback:
+2020-07-20 15:55:10,205 - nornir.core.task -    ERROR -      start() - Host 'ISP-1': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\channel.py", line 699, in recv
+    out = self.in_buffer.read(nbytes, self.timeout)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\buffered_pipe.py", line 164, in read
+    raise PipeTimeout()
+paramiko.buffered_pipe.PipeTimeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 550, in _read_channel_expect
+    new_data = self.remote_conn.recv(MAX_BUFFER)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\channel.py", line 701, in recv
+    raise socket.timeout()
+socket.timeout
+
+During handling of the above exception, another exception occurred:
+
 Traceback (most recent call last):
   File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
     r = self.task(self, **self.params)
-  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\files\write_file.py", line 55, in write_file
-    with open(filename, mode=mode) as f:
-OSError: [Errno 22] Invalid argument: 'backup/R2-<built-in method now of type object at 0x00007FF8BF4C7530>.txt'
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\networking\netmiko_send_config.py", line 29, in netmiko_send_config
+    result = net_connect.send_config_from_file(config_file=config_file, **kwargs)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 1672, in send_config_from_file
+    return self.send_config_set(cfg_file, **kwargs)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 1766, in send_config_set
+    new_output = self.read_until_pattern(pattern=pattern)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 627, in read_until_pattern
+    return self._read_channel_expect(*args, **kwargs)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 560, in _read_channel_expect
+    raise NetmikoTimeoutException(
+netmiko.ssh_exception.NetmikoTimeoutException: Timed-out reading channel, data not available.
 
-2020-07-19 23:44:55,131 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'Backup Configuration Files' failed with traceback:
+2020-07-20 15:55:10,206 - nornir.core.task -    ERROR -      start() - Host 'ISP-1': task 'Push Config to devices' failed with traceback:
 Traceback (most recent call last):
   File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
     r = self.task(self, **self.params)
-  File "D:/CCNP/DevNet/nornir/start.py", line 56, in backup_config
-    task.run(task=write_file,
+  File "D:/CCNP/DevNet/nornir/start.py", line 73, in push_config
+    result = task.run(task=netmiko_send_config,
   File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 147, in run
     raise NornirSubTaskError(task=task, result=r)
-nornir.core.exceptions.NornirSubTaskError: Subtask: <function write_file at 0x0000027C161AB670> (failed)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function netmiko_send_config at 0x000001675F1EF670> (failed)
 
 
-2020-07-19 23:56:36,134 -  nornir.core -     INFO -        run() - Running task 'Backup Configuration Files' with args {'name': 'Backup Configuration Files', 'commands': 'show run'} on 3 hosts
+2020-07-20 15:55:47,602 -  nornir.core -     INFO -        run() - Running task 'Push Config to devices' with args {'name': 'Push Config to devices', 'config_date': '2020-07-20'} on 3 hosts
+2020-07-20 15:56:08,613 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 899, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\client.py", line 349, in connect
+    retry_on_signal(lambda: sock.connect(addr))
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\util.py", line 283, in retry_on_signal
+    return function()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\client.py", line 349, in <lambda>
+    retry_on_signal(lambda: sock.connect(addr))
+TimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\networking\netmiko_send_config.py", line 24, in netmiko_send_config
+    net_connect = task.host.get_connection("netmiko", task.nornir.config)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\inventory.py", line 294, in get_connection
+    self.open_connection(
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\inventory.py", line 345, in open_connection
+    self.connections[connection].open(
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\connections\netmiko.py", line 58, in open
+    self.connection = ConnectHandler(**parameters)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\ssh_dispatcher.py", line 266, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 327, in __init__
+    self._open()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 332, in _open
+    self.establish_connection()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 905, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.ssh_exception.NetmikoTimeoutException: Connection to device timed-out: cisco_ios 10.0.0.10:22
+
+2020-07-20 15:56:08,613 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 899, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\client.py", line 349, in connect
+    retry_on_signal(lambda: sock.connect(addr))
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\util.py", line 283, in retry_on_signal
+    return function()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\client.py", line 349, in <lambda>
+    retry_on_signal(lambda: sock.connect(addr))
+TimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\networking\netmiko_send_config.py", line 24, in netmiko_send_config
+    net_connect = task.host.get_connection("netmiko", task.nornir.config)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\inventory.py", line 294, in get_connection
+    self.open_connection(
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\inventory.py", line 345, in open_connection
+    self.connections[connection].open(
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\connections\netmiko.py", line 58, in open
+    self.connection = ConnectHandler(**parameters)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\ssh_dispatcher.py", line 266, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 327, in __init__
+    self._open()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 332, in _open
+    self.establish_connection()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 905, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.ssh_exception.NetmikoTimeoutException: Connection to device timed-out: cisco_ios 10.0.0.11:22
+
+2020-07-20 15:56:08,614 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'Push Config to devices' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:/CCNP/DevNet/nornir/start.py", line 73, in push_config
+    result = task.run(task=netmiko_send_config,
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 147, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function netmiko_send_config at 0x0000028DCB89F670> (failed)
+
+
+2020-07-20 15:56:08,614 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'Push Config to devices' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:/CCNP/DevNet/nornir/start.py", line 73, in push_config
+    result = task.run(task=netmiko_send_config,
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 147, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function netmiko_send_config at 0x0000028DCB89F670> (failed)
+
+
+2020-07-20 15:56:29,240 - nornir.core.task -    ERROR -      start() - Host 'ISP-1': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\channel.py", line 699, in recv
+    out = self.in_buffer.read(nbytes, self.timeout)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\buffered_pipe.py", line 164, in read
+    raise PipeTimeout()
+paramiko.buffered_pipe.PipeTimeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 550, in _read_channel_expect
+    new_data = self.remote_conn.recv(MAX_BUFFER)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\channel.py", line 701, in recv
+    raise socket.timeout()
+socket.timeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\networking\netmiko_send_config.py", line 29, in netmiko_send_config
+    result = net_connect.send_config_from_file(config_file=config_file, **kwargs)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 1672, in send_config_from_file
+    return self.send_config_set(cfg_file, **kwargs)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 1766, in send_config_set
+    new_output = self.read_until_pattern(pattern=pattern)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 627, in read_until_pattern
+    return self._read_channel_expect(*args, **kwargs)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 560, in _read_channel_expect
+    raise NetmikoTimeoutException(
+netmiko.ssh_exception.NetmikoTimeoutException: Timed-out reading channel, data not available.
+
+2020-07-20 15:56:29,241 - nornir.core.task -    ERROR -      start() - Host 'ISP-1': task 'Push Config to devices' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:/CCNP/DevNet/nornir/start.py", line 73, in push_config
+    result = task.run(task=netmiko_send_config,
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 147, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function netmiko_send_config at 0x0000028DCB89F670> (failed)
+
+
+2020-07-20 15:57:11,558 -  nornir.core -     INFO -        run() - Running task 'Push Config to devices' with args {'name': 'Push Config to devices', 'config_date': '2020-07-20'} on 3 hosts
+2020-07-20 15:57:32,570 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 899, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\client.py", line 349, in connect
+    retry_on_signal(lambda: sock.connect(addr))
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\util.py", line 283, in retry_on_signal
+    return function()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\client.py", line 349, in <lambda>
+    retry_on_signal(lambda: sock.connect(addr))
+TimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\networking\netmiko_send_config.py", line 24, in netmiko_send_config
+    net_connect = task.host.get_connection("netmiko", task.nornir.config)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\inventory.py", line 294, in get_connection
+    self.open_connection(
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\inventory.py", line 345, in open_connection
+    self.connections[connection].open(
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\connections\netmiko.py", line 58, in open
+    self.connection = ConnectHandler(**parameters)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\ssh_dispatcher.py", line 266, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 327, in __init__
+    self._open()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 332, in _open
+    self.establish_connection()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 905, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.ssh_exception.NetmikoTimeoutException: Connection to device timed-out: cisco_ios 10.0.0.10:22
+
+2020-07-20 15:57:32,570 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 899, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\client.py", line 349, in connect
+    retry_on_signal(lambda: sock.connect(addr))
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\util.py", line 283, in retry_on_signal
+    return function()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\client.py", line 349, in <lambda>
+    retry_on_signal(lambda: sock.connect(addr))
+TimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\networking\netmiko_send_config.py", line 24, in netmiko_send_config
+    net_connect = task.host.get_connection("netmiko", task.nornir.config)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\inventory.py", line 294, in get_connection
+    self.open_connection(
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\inventory.py", line 345, in open_connection
+    self.connections[connection].open(
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\connections\netmiko.py", line 58, in open
+    self.connection = ConnectHandler(**parameters)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\ssh_dispatcher.py", line 266, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 327, in __init__
+    self._open()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 332, in _open
+    self.establish_connection()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 905, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.ssh_exception.NetmikoTimeoutException: Connection to device timed-out: cisco_ios 10.0.0.11:22
+
+2020-07-20 15:57:32,571 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'Push Config to devices' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:/CCNP/DevNet/nornir/start.py", line 73, in push_config
+    result = task.run(task=netmiko_send_config,
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 147, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function netmiko_send_config at 0x000001B98494F670> (failed)
+
+
+2020-07-20 15:57:32,571 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'Push Config to devices' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:/CCNP/DevNet/nornir/start.py", line 73, in push_config
+    result = task.run(task=netmiko_send_config,
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 147, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function netmiko_send_config at 0x000001B98494F670> (failed)
+
+
+2020-07-20 15:57:53,088 - nornir.core.task -    ERROR -      start() - Host 'ISP-1': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\channel.py", line 699, in recv
+    out = self.in_buffer.read(nbytes, self.timeout)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\buffered_pipe.py", line 164, in read
+    raise PipeTimeout()
+paramiko.buffered_pipe.PipeTimeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 550, in _read_channel_expect
+    new_data = self.remote_conn.recv(MAX_BUFFER)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\channel.py", line 701, in recv
+    raise socket.timeout()
+socket.timeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\networking\netmiko_send_config.py", line 29, in netmiko_send_config
+    result = net_connect.send_config_from_file(config_file=config_file, **kwargs)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 1672, in send_config_from_file
+    return self.send_config_set(cfg_file, **kwargs)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 1766, in send_config_set
+    new_output = self.read_until_pattern(pattern=pattern)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 627, in read_until_pattern
+    return self._read_channel_expect(*args, **kwargs)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 560, in _read_channel_expect
+    raise NetmikoTimeoutException(
+netmiko.ssh_exception.NetmikoTimeoutException: Timed-out reading channel, data not available.
+
+2020-07-20 15:57:53,088 - nornir.core.task -    ERROR -      start() - Host 'ISP-1': task 'Push Config to devices' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:/CCNP/DevNet/nornir/start.py", line 73, in push_config
+    result = task.run(task=netmiko_send_config,
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 147, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function netmiko_send_config at 0x000001B98494F670> (failed)
+
+
+2020-07-20 16:00:36,162 -  nornir.core -     INFO -        run() - Running task 'Show Version' with args {'name': 'Show Version', 'show_version': 'show version'} on 3 hosts
+2020-07-20 16:00:57,202 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 899, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\client.py", line 349, in connect
+    retry_on_signal(lambda: sock.connect(addr))
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\util.py", line 283, in retry_on_signal
+    return function()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\client.py", line 349, in <lambda>
+    retry_on_signal(lambda: sock.connect(addr))
+TimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\networking\netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection("netmiko", task.nornir.config)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\inventory.py", line 294, in get_connection
+    self.open_connection(
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\inventory.py", line 345, in open_connection
+    self.connections[connection].open(
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\connections\netmiko.py", line 58, in open
+    self.connection = ConnectHandler(**parameters)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\ssh_dispatcher.py", line 266, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 327, in __init__
+    self._open()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 332, in _open
+    self.establish_connection()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 905, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.ssh_exception.NetmikoTimeoutException: Connection to device timed-out: cisco_ios 10.0.0.11:22
+
+2020-07-20 16:00:57,202 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 899, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\client.py", line 349, in connect
+    retry_on_signal(lambda: sock.connect(addr))
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\util.py", line 283, in retry_on_signal
+    return function()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\client.py", line 349, in <lambda>
+    retry_on_signal(lambda: sock.connect(addr))
+TimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\networking\netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection("netmiko", task.nornir.config)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\inventory.py", line 294, in get_connection
+    self.open_connection(
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\inventory.py", line 345, in open_connection
+    self.connections[connection].open(
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\connections\netmiko.py", line 58, in open
+    self.connection = ConnectHandler(**parameters)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\ssh_dispatcher.py", line 266, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 327, in __init__
+    self._open()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 332, in _open
+    self.establish_connection()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 905, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.ssh_exception.NetmikoTimeoutException: Connection to device timed-out: cisco_ios 10.0.0.10:22
+
+2020-07-20 16:00:57,203 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'Show Version' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:/CCNP/DevNet/nornir/start.py", line 85, in show_version
+    result = task.run(task=netmiko_send_command,
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 147, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function netmiko_send_command at 0x000002272F4FF550> (failed)
+
+
+2020-07-20 16:00:57,204 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'Show Version' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:/CCNP/DevNet/nornir/start.py", line 85, in show_version
+    result = task.run(task=netmiko_send_command,
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 147, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function netmiko_send_command at 0x000002272F4FF550> (failed)
+
+
+2020-07-20 16:01:29,427 -  nornir.core -     INFO -        run() - Running task 'Show Version' with args {'name': 'Show Version'} on 3 hosts
+2020-07-20 16:01:50,438 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 899, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\client.py", line 349, in connect
+    retry_on_signal(lambda: sock.connect(addr))
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\util.py", line 283, in retry_on_signal
+    return function()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\client.py", line 349, in <lambda>
+    retry_on_signal(lambda: sock.connect(addr))
+TimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\networking\netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection("netmiko", task.nornir.config)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\inventory.py", line 294, in get_connection
+    self.open_connection(
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\inventory.py", line 345, in open_connection
+    self.connections[connection].open(
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\connections\netmiko.py", line 58, in open
+    self.connection = ConnectHandler(**parameters)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\ssh_dispatcher.py", line 266, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 327, in __init__
+    self._open()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 332, in _open
+    self.establish_connection()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 905, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.ssh_exception.NetmikoTimeoutException: Connection to device timed-out: cisco_ios 10.0.0.10:22
+
+2020-07-20 16:01:50,438 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 899, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\client.py", line 349, in connect
+    retry_on_signal(lambda: sock.connect(addr))
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\util.py", line 283, in retry_on_signal
+    return function()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\client.py", line 349, in <lambda>
+    retry_on_signal(lambda: sock.connect(addr))
+TimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\networking\netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection("netmiko", task.nornir.config)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\inventory.py", line 294, in get_connection
+    self.open_connection(
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\inventory.py", line 345, in open_connection
+    self.connections[connection].open(
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\connections\netmiko.py", line 58, in open
+    self.connection = ConnectHandler(**parameters)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\ssh_dispatcher.py", line 266, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 327, in __init__
+    self._open()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 332, in _open
+    self.establish_connection()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 905, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.ssh_exception.NetmikoTimeoutException: Connection to device timed-out: cisco_ios 10.0.0.11:22
+
+2020-07-20 16:01:50,439 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'Show Version' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:/CCNP/DevNet/nornir/start.py", line 85, in show_version
+    result = task.run(task=netmiko_send_command,
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 147, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function netmiko_send_command at 0x0000013DC5FBF550> (failed)
+
+
+2020-07-20 16:01:50,440 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'Show Version' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:/CCNP/DevNet/nornir/start.py", line 85, in show_version
+    result = task.run(task=netmiko_send_command,
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 147, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function netmiko_send_command at 0x0000013DC5FBF550> (failed)
+
+
+2020-07-20 16:02:53,257 -  nornir.core -     INFO -        run() - Running task 'Show Version' with args {'name': 'Show Version'} on 3 hosts
+2020-07-20 16:03:13,049 -  nornir.core -     INFO -        run() - Running task 'Show Version' with args {'name': 'Show Version'} on 3 hosts
+2020-07-20 16:03:34,057 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 899, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\client.py", line 349, in connect
+    retry_on_signal(lambda: sock.connect(addr))
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\util.py", line 283, in retry_on_signal
+    return function()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\client.py", line 349, in <lambda>
+    retry_on_signal(lambda: sock.connect(addr))
+TimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\networking\netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection("netmiko", task.nornir.config)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\inventory.py", line 294, in get_connection
+    self.open_connection(
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\inventory.py", line 345, in open_connection
+    self.connections[connection].open(
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\connections\netmiko.py", line 58, in open
+    self.connection = ConnectHandler(**parameters)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\ssh_dispatcher.py", line 266, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 327, in __init__
+    self._open()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 332, in _open
+    self.establish_connection()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 905, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.ssh_exception.NetmikoTimeoutException: Connection to device timed-out: cisco_ios 10.0.0.10:22
+
+2020-07-20 16:03:34,057 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 899, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\client.py", line 349, in connect
+    retry_on_signal(lambda: sock.connect(addr))
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\util.py", line 283, in retry_on_signal
+    return function()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\client.py", line 349, in <lambda>
+    retry_on_signal(lambda: sock.connect(addr))
+TimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\networking\netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection("netmiko", task.nornir.config)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\inventory.py", line 294, in get_connection
+    self.open_connection(
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\inventory.py", line 345, in open_connection
+    self.connections[connection].open(
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\connections\netmiko.py", line 58, in open
+    self.connection = ConnectHandler(**parameters)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\ssh_dispatcher.py", line 266, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 327, in __init__
+    self._open()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 332, in _open
+    self.establish_connection()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 905, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.ssh_exception.NetmikoTimeoutException: Connection to device timed-out: cisco_ios 10.0.0.11:22
+
+2020-07-20 16:03:34,058 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'Show Version' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:/CCNP/DevNet/nornir/start.py", line 85, in show_version
+    result = task.run(task=netmiko_send_command,
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 147, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function netmiko_send_command at 0x0000025EB1C1F550> (failed)
+
+
+2020-07-20 16:03:34,058 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'Show Version' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:/CCNP/DevNet/nornir/start.py", line 85, in show_version
+    result = task.run(task=netmiko_send_command,
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 147, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function netmiko_send_command at 0x0000025EB1C1F550> (failed)
+
+
+2020-07-20 16:03:40,938 -  nornir.core -     INFO -        run() - Running task 'Show Version' with args {'name': 'Show Version'} on 3 hosts
+2020-07-20 16:04:01,948 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 899, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\client.py", line 349, in connect
+    retry_on_signal(lambda: sock.connect(addr))
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\util.py", line 283, in retry_on_signal
+    return function()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\client.py", line 349, in <lambda>
+    retry_on_signal(lambda: sock.connect(addr))
+TimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\networking\netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection("netmiko", task.nornir.config)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\inventory.py", line 294, in get_connection
+    self.open_connection(
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\inventory.py", line 345, in open_connection
+    self.connections[connection].open(
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\connections\netmiko.py", line 58, in open
+    self.connection = ConnectHandler(**parameters)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\ssh_dispatcher.py", line 266, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 327, in __init__
+    self._open()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 332, in _open
+    self.establish_connection()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 905, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.ssh_exception.NetmikoTimeoutException: Connection to device timed-out: cisco_ios 10.0.0.11:22
+
+2020-07-20 16:04:01,950 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 899, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\client.py", line 349, in connect
+    retry_on_signal(lambda: sock.connect(addr))
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\util.py", line 283, in retry_on_signal
+    return function()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\client.py", line 349, in <lambda>
+    retry_on_signal(lambda: sock.connect(addr))
+TimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\networking\netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection("netmiko", task.nornir.config)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\inventory.py", line 294, in get_connection
+    self.open_connection(
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\inventory.py", line 345, in open_connection
+    self.connections[connection].open(
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\connections\netmiko.py", line 58, in open
+    self.connection = ConnectHandler(**parameters)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\ssh_dispatcher.py", line 266, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 327, in __init__
+    self._open()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 332, in _open
+    self.establish_connection()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 905, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.ssh_exception.NetmikoTimeoutException: Connection to device timed-out: cisco_ios 10.0.0.10:22
+
+2020-07-20 16:04:01,950 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'Show Version' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:/CCNP/DevNet/nornir/start.py", line 85, in show_version
+    result = task.run(task=netmiko_send_command,
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 147, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function netmiko_send_command at 0x0000015D088DF550> (failed)
+
+
+2020-07-20 16:04:01,951 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'Show Version' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:/CCNP/DevNet/nornir/start.py", line 85, in show_version
+    result = task.run(task=netmiko_send_command,
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 147, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function netmiko_send_command at 0x0000015D088DF550> (failed)
+
+
+2020-07-20 16:04:24,964 -  nornir.core -     INFO -        run() - Running task 'tcp_ping' with args {'ports': 80, 'host': '1.1.1.1'} on 3 hosts
+2020-07-20 16:04:24,996 -  nornir.core -     INFO -        run() - Running task 'Show Version' with args {'name': 'Show Version'} on 3 hosts
+2020-07-20 16:04:46,004 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 899, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\client.py", line 349, in connect
+    retry_on_signal(lambda: sock.connect(addr))
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\util.py", line 283, in retry_on_signal
+    return function()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\client.py", line 349, in <lambda>
+    retry_on_signal(lambda: sock.connect(addr))
+TimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\networking\netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection("netmiko", task.nornir.config)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\inventory.py", line 294, in get_connection
+    self.open_connection(
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\inventory.py", line 345, in open_connection
+    self.connections[connection].open(
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\connections\netmiko.py", line 58, in open
+    self.connection = ConnectHandler(**parameters)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\ssh_dispatcher.py", line 266, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 327, in __init__
+    self._open()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 332, in _open
+    self.establish_connection()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 905, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.ssh_exception.NetmikoTimeoutException: Connection to device timed-out: cisco_ios 10.0.0.10:22
+
+2020-07-20 16:04:46,005 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 899, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\client.py", line 349, in connect
+    retry_on_signal(lambda: sock.connect(addr))
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\util.py", line 283, in retry_on_signal
+    return function()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\client.py", line 349, in <lambda>
+    retry_on_signal(lambda: sock.connect(addr))
+TimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\networking\netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection("netmiko", task.nornir.config)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\inventory.py", line 294, in get_connection
+    self.open_connection(
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\inventory.py", line 345, in open_connection
+    self.connections[connection].open(
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\connections\netmiko.py", line 58, in open
+    self.connection = ConnectHandler(**parameters)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\ssh_dispatcher.py", line 266, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 327, in __init__
+    self._open()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 332, in _open
+    self.establish_connection()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 905, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.ssh_exception.NetmikoTimeoutException: Connection to device timed-out: cisco_ios 10.0.0.11:22
+
+2020-07-20 16:04:46,005 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'Show Version' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:/CCNP/DevNet/nornir/start.py", line 85, in show_version
+    result = task.run(task=netmiko_send_command,
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 147, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function netmiko_send_command at 0x000001CFBF28F550> (failed)
+
+
+2020-07-20 16:04:46,005 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'Show Version' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:/CCNP/DevNet/nornir/start.py", line 85, in show_version
+    result = task.run(task=netmiko_send_command,
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 147, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function netmiko_send_command at 0x000001CFBF28F550> (failed)
+
+
+2020-07-20 16:05:30,205 -  nornir.core -     INFO -        run() - Running task 'Show Version' with args {'name': 'Show Version'} on 3 hosts
+2020-07-20 16:05:51,216 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 899, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\client.py", line 349, in connect
+    retry_on_signal(lambda: sock.connect(addr))
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\util.py", line 283, in retry_on_signal
+    return function()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\client.py", line 349, in <lambda>
+    retry_on_signal(lambda: sock.connect(addr))
+TimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\networking\netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection("netmiko", task.nornir.config)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\inventory.py", line 294, in get_connection
+    self.open_connection(
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\inventory.py", line 345, in open_connection
+    self.connections[connection].open(
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\connections\netmiko.py", line 58, in open
+    self.connection = ConnectHandler(**parameters)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\ssh_dispatcher.py", line 266, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 327, in __init__
+    self._open()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 332, in _open
+    self.establish_connection()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 905, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.ssh_exception.NetmikoTimeoutException: Connection to device timed-out: cisco_ios 10.0.0.10:22
+
+2020-07-20 16:05:51,216 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 899, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\client.py", line 349, in connect
+    retry_on_signal(lambda: sock.connect(addr))
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\util.py", line 283, in retry_on_signal
+    return function()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\client.py", line 349, in <lambda>
+    retry_on_signal(lambda: sock.connect(addr))
+TimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\networking\netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection("netmiko", task.nornir.config)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\inventory.py", line 294, in get_connection
+    self.open_connection(
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\inventory.py", line 345, in open_connection
+    self.connections[connection].open(
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\connections\netmiko.py", line 58, in open
+    self.connection = ConnectHandler(**parameters)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\ssh_dispatcher.py", line 266, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 327, in __init__
+    self._open()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 332, in _open
+    self.establish_connection()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 905, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.ssh_exception.NetmikoTimeoutException: Connection to device timed-out: cisco_ios 10.0.0.11:22
+
+2020-07-20 16:05:51,218 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'Show Version' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:/CCNP/DevNet/nornir/start.py", line 85, in show_version
+    result = task.run(task=netmiko_send_command,
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 147, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function netmiko_send_command at 0x000001982AB8F550> (failed)
+
+
+2020-07-20 16:05:51,218 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'Show Version' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:/CCNP/DevNet/nornir/start.py", line 85, in show_version
+    result = task.run(task=netmiko_send_command,
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 147, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function netmiko_send_command at 0x000001982AB8F550> (failed)
+
+
+2020-07-20 16:06:15,686 -  nornir.core -     INFO -        run() - Running task 'Show Version' with args {'name': 'Show Version'} on 3 hosts
+2020-07-20 16:06:36,697 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 899, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\client.py", line 349, in connect
+    retry_on_signal(lambda: sock.connect(addr))
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\util.py", line 283, in retry_on_signal
+    return function()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\client.py", line 349, in <lambda>
+    retry_on_signal(lambda: sock.connect(addr))
+TimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\networking\netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection("netmiko", task.nornir.config)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\inventory.py", line 294, in get_connection
+    self.open_connection(
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\inventory.py", line 345, in open_connection
+    self.connections[connection].open(
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\connections\netmiko.py", line 58, in open
+    self.connection = ConnectHandler(**parameters)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\ssh_dispatcher.py", line 266, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 327, in __init__
+    self._open()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 332, in _open
+    self.establish_connection()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 905, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.ssh_exception.NetmikoTimeoutException: Connection to device timed-out: cisco_ios 10.0.0.10:22
+
+2020-07-20 16:06:36,698 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 899, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\client.py", line 349, in connect
+    retry_on_signal(lambda: sock.connect(addr))
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\util.py", line 283, in retry_on_signal
+    return function()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\client.py", line 349, in <lambda>
+    retry_on_signal(lambda: sock.connect(addr))
+TimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\networking\netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection("netmiko", task.nornir.config)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\inventory.py", line 294, in get_connection
+    self.open_connection(
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\inventory.py", line 345, in open_connection
+    self.connections[connection].open(
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\connections\netmiko.py", line 58, in open
+    self.connection = ConnectHandler(**parameters)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\ssh_dispatcher.py", line 266, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 327, in __init__
+    self._open()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 332, in _open
+    self.establish_connection()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 905, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.ssh_exception.NetmikoTimeoutException: Connection to device timed-out: cisco_ios 10.0.0.11:22
+
+2020-07-20 16:06:36,698 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'Show Version' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:/CCNP/DevNet/nornir/start.py", line 85, in show_version
+    result = task.run(task=netmiko_send_command,
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 147, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function netmiko_send_command at 0x000002009597F550> (failed)
+
+
+2020-07-20 16:06:36,699 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'Show Version' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:/CCNP/DevNet/nornir/start.py", line 85, in show_version
+    result = task.run(task=netmiko_send_command,
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 147, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function netmiko_send_command at 0x000002009597F550> (failed)
+
+
+2020-07-20 16:07:21,882 -  nornir.core -     INFO -        run() - Running task 'Show Version' with args {'name': 'Show Version'} on 3 hosts
+2020-07-20 16:07:42,892 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 899, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\client.py", line 349, in connect
+    retry_on_signal(lambda: sock.connect(addr))
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\util.py", line 283, in retry_on_signal
+    return function()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\client.py", line 349, in <lambda>
+    retry_on_signal(lambda: sock.connect(addr))
+TimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\networking\netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection("netmiko", task.nornir.config)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\inventory.py", line 294, in get_connection
+    self.open_connection(
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\inventory.py", line 345, in open_connection
+    self.connections[connection].open(
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\connections\netmiko.py", line 58, in open
+    self.connection = ConnectHandler(**parameters)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\ssh_dispatcher.py", line 266, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 327, in __init__
+    self._open()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 332, in _open
+    self.establish_connection()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 905, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.ssh_exception.NetmikoTimeoutException: Connection to device timed-out: cisco_ios 10.0.0.10:22
+
+2020-07-20 16:07:42,892 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 899, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\client.py", line 349, in connect
+    retry_on_signal(lambda: sock.connect(addr))
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\util.py", line 283, in retry_on_signal
+    return function()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\client.py", line 349, in <lambda>
+    retry_on_signal(lambda: sock.connect(addr))
+TimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\networking\netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection("netmiko", task.nornir.config)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\inventory.py", line 294, in get_connection
+    self.open_connection(
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\inventory.py", line 345, in open_connection
+    self.connections[connection].open(
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\connections\netmiko.py", line 58, in open
+    self.connection = ConnectHandler(**parameters)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\ssh_dispatcher.py", line 266, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 327, in __init__
+    self._open()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 332, in _open
+    self.establish_connection()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 905, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.ssh_exception.NetmikoTimeoutException: Connection to device timed-out: cisco_ios 10.0.0.11:22
+
+2020-07-20 16:07:42,893 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'Show Version' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:/CCNP/DevNet/nornir/start.py", line 85, in show_version
+    result = task.run(task=netmiko_send_command,
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 147, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function netmiko_send_command at 0x000001D47007F550> (failed)
+
+
+2020-07-20 16:07:42,894 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'Show Version' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:/CCNP/DevNet/nornir/start.py", line 85, in show_version
+    result = task.run(task=netmiko_send_command,
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 147, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function netmiko_send_command at 0x000001D47007F550> (failed)
+
+
+2020-07-20 16:09:05,722 -  nornir.core -     INFO -        run() - Running task 'Show Version' with args {'name': 'Show Version'} on 3 hosts
+2020-07-20 16:09:26,730 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 899, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\client.py", line 349, in connect
+    retry_on_signal(lambda: sock.connect(addr))
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\util.py", line 283, in retry_on_signal
+    return function()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\client.py", line 349, in <lambda>
+    retry_on_signal(lambda: sock.connect(addr))
+TimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\networking\netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection("netmiko", task.nornir.config)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\inventory.py", line 294, in get_connection
+    self.open_connection(
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\inventory.py", line 345, in open_connection
+    self.connections[connection].open(
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\connections\netmiko.py", line 58, in open
+    self.connection = ConnectHandler(**parameters)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\ssh_dispatcher.py", line 266, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 327, in __init__
+    self._open()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 332, in _open
+    self.establish_connection()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 905, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.ssh_exception.NetmikoTimeoutException: Connection to device timed-out: cisco_ios 10.0.0.11:22
+
+2020-07-20 16:09:26,731 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 899, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\client.py", line 349, in connect
+    retry_on_signal(lambda: sock.connect(addr))
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\util.py", line 283, in retry_on_signal
+    return function()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\paramiko\client.py", line 349, in <lambda>
+    retry_on_signal(lambda: sock.connect(addr))
+TimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\networking\netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection("netmiko", task.nornir.config)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\inventory.py", line 294, in get_connection
+    self.open_connection(
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\inventory.py", line 345, in open_connection
+    self.connections[connection].open(
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\connections\netmiko.py", line 58, in open
+    self.connection = ConnectHandler(**parameters)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\ssh_dispatcher.py", line 266, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 327, in __init__
+    self._open()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 332, in _open
+    self.establish_connection()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\netmiko\base_connection.py", line 905, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.ssh_exception.NetmikoTimeoutException: Connection to device timed-out: cisco_ios 10.0.0.10:22
+
+2020-07-20 16:09:26,731 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'Show Version' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:/CCNP/DevNet/nornir/start.py", line 85, in show_version
+    result = task.run(task=netmiko_send_command,
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 147, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function netmiko_send_command at 0x0000026E73D8F550> (failed)
+
+
+2020-07-20 16:09:26,732 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'Show Version' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:/CCNP/DevNet/nornir/start.py", line 85, in show_version
+    result = task.run(task=netmiko_send_command,
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 147, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function netmiko_send_command at 0x0000026E73D8F550> (failed)
+
+
+2020-07-20 16:11:05,318 -  nornir.core -     INFO -        run() - Running task 'Backup Configuration Files' with args {'name': 'Backup Configuration Files', 'commands': 'show run'} on 3 hosts
+2020-07-20 16:11:13,802 -  nornir.core -     INFO -        run() - Running task 'Show Version' with args {'name': 'Show Version'} on 3 hosts
+2020-07-20 16:12:38,629 -  nornir.core -     INFO -        run() - Running task 'Show Version' with args {'name': 'Show Version'} on 3 hosts
+2020-07-20 16:13:36,108 -  nornir.core -     INFO -        run() - Running task 'Show Version' with args {'name': 'Show Version'} on 3 hosts
+2020-07-20 16:14:10,698 -  nornir.core -     INFO -        run() - Running task 'Show Version' with args {'name': 'Show Version'} on 3 hosts
+2020-07-20 16:20:35,555 -  nornir.core -     INFO -        run() - Running task 'Show Version' with args {'name': 'Show Version'} on 3 hosts
+2020-07-20 16:24:30,073 -  nornir.core -     INFO -        run() - Running task 'Show Version' with args {'name': 'Show Version'} on 3 hosts
+2020-07-20 16:24:42,116 -  nornir.core -     INFO -        run() - Running task 'Show Version' with args {'name': 'Show Version'} on 3 hosts
+2020-07-20 16:34:49,171 -  nornir.core -     INFO -        run() - Running task 'Check Config' with args {'name': 'Check Config', 'souce_date': '2020-07-20'} on 3 hosts
+2020-07-20 16:35:02,380 - nornir.core.task -    ERROR -      start() - Host 'ISP-1': task 'napalm_validate' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\napalm\base\validate.py", line 25, in _get_validation_file
+    validation_source = yaml.safe_load(stream)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\yaml\__init__.py", line 162, in safe_load
+    return load(stream, SafeLoader)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\yaml\__init__.py", line 114, in load
+    return loader.get_single_data()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\yaml\constructor.py", line 49, in get_single_data
+    node = self.get_single_node()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\yaml\composer.py", line 36, in get_single_node
+    document = self.compose_document()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\yaml\composer.py", line 58, in compose_document
+    self.get_event()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\yaml\parser.py", line 118, in get_event
+    self.current_event = self.state()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\yaml\parser.py", line 193, in parse_document_end
+    token = self.peek_token()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\yaml\scanner.py", line 129, in peek_token
+    self.fetch_more_tokens()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\yaml\scanner.py", line 223, in fetch_more_tokens
+    return self.fetch_value()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\yaml\scanner.py", line 577, in fetch_value
+    raise ScannerError(None, None,
+yaml.scanner.ScannerError: mapping values are not allowed here
+  in "backup/2020-07-20/ISP-1-2020-07-20.txt", line 4, column 23
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\networking\napalm_validate.py", line 28, in napalm_validate
+    r = device.compliance_report(
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\napalm\base\base.py", line 1675, in compliance_report
+    return validate.compliance_report(
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\napalm\base\validate.py", line 189, in compliance_report
+    validation_source = _get_validation_file(validation_file)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\napalm\base\validate.py", line 27, in _get_validation_file
+    raise ValidationException(exc)
+napalm.base.exceptions.ValidationException: mapping values are not allowed here
+  in "backup/2020-07-20/ISP-1-2020-07-20.txt", line 4, column 23
+
+2020-07-20 16:35:02,380 - nornir.core.task -    ERROR -      start() - Host 'ISP-1': task 'Check Config' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:/CCNP/DevNet/nornir/start.py", line 109, in config_validate
+    result_validate = task.run(task=napalm_validate,
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 147, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function napalm_validate at 0x000002B1C5E3F040> (failed)
+
+
+2020-07-20 16:35:03,038 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'napalm_validate' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\napalm\base\validate.py", line 25, in _get_validation_file
+    validation_source = yaml.safe_load(stream)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\yaml\__init__.py", line 162, in safe_load
+    return load(stream, SafeLoader)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\yaml\__init__.py", line 114, in load
+    return loader.get_single_data()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\yaml\constructor.py", line 49, in get_single_data
+    node = self.get_single_node()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\yaml\composer.py", line 36, in get_single_node
+    document = self.compose_document()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\yaml\composer.py", line 58, in compose_document
+    self.get_event()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\yaml\parser.py", line 118, in get_event
+    self.current_event = self.state()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\yaml\parser.py", line 193, in parse_document_end
+    token = self.peek_token()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\yaml\scanner.py", line 129, in peek_token
+    self.fetch_more_tokens()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\yaml\scanner.py", line 223, in fetch_more_tokens
+    return self.fetch_value()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\yaml\scanner.py", line 577, in fetch_value
+    raise ScannerError(None, None,
+yaml.scanner.ScannerError: mapping values are not allowed here
+  in "backup/2020-07-20/R1-2020-07-20.txt", line 4, column 23
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\networking\napalm_validate.py", line 28, in napalm_validate
+    r = device.compliance_report(
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\napalm\base\base.py", line 1675, in compliance_report
+    return validate.compliance_report(
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\napalm\base\validate.py", line 189, in compliance_report
+    validation_source = _get_validation_file(validation_file)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\napalm\base\validate.py", line 27, in _get_validation_file
+    raise ValidationException(exc)
+napalm.base.exceptions.ValidationException: mapping values are not allowed here
+  in "backup/2020-07-20/R1-2020-07-20.txt", line 4, column 23
+
+2020-07-20 16:35:03,039 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'Check Config' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:/CCNP/DevNet/nornir/start.py", line 109, in config_validate
+    result_validate = task.run(task=napalm_validate,
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 147, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function napalm_validate at 0x000002B1C5E3F040> (failed)
+
+
+2020-07-20 16:35:03,064 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'napalm_validate' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\napalm\base\validate.py", line 25, in _get_validation_file
+    validation_source = yaml.safe_load(stream)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\yaml\__init__.py", line 162, in safe_load
+    return load(stream, SafeLoader)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\yaml\__init__.py", line 114, in load
+    return loader.get_single_data()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\yaml\constructor.py", line 49, in get_single_data
+    node = self.get_single_node()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\yaml\composer.py", line 36, in get_single_node
+    document = self.compose_document()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\yaml\composer.py", line 58, in compose_document
+    self.get_event()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\yaml\parser.py", line 118, in get_event
+    self.current_event = self.state()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\yaml\parser.py", line 193, in parse_document_end
+    token = self.peek_token()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\yaml\scanner.py", line 129, in peek_token
+    self.fetch_more_tokens()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\yaml\scanner.py", line 223, in fetch_more_tokens
+    return self.fetch_value()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\yaml\scanner.py", line 577, in fetch_value
+    raise ScannerError(None, None,
+yaml.scanner.ScannerError: mapping values are not allowed here
+  in "backup/2020-07-20/R2-2020-07-20.txt", line 4, column 23
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\networking\napalm_validate.py", line 28, in napalm_validate
+    r = device.compliance_report(
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\napalm\base\base.py", line 1675, in compliance_report
+    return validate.compliance_report(
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\napalm\base\validate.py", line 189, in compliance_report
+    validation_source = _get_validation_file(validation_file)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\napalm\base\validate.py", line 27, in _get_validation_file
+    raise ValidationException(exc)
+napalm.base.exceptions.ValidationException: mapping values are not allowed here
+  in "backup/2020-07-20/R2-2020-07-20.txt", line 4, column 23
+
+2020-07-20 16:35:03,065 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'Check Config' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:/CCNP/DevNet/nornir/start.py", line 109, in config_validate
+    result_validate = task.run(task=napalm_validate,
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 147, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function napalm_validate at 0x000002B1C5E3F040> (failed)
+
+
+2020-07-20 16:36:39,958 -  nornir.core -     INFO -        run() - Running task 'Check Config' with args {'name': 'Check Config', 'souce_date': '2020-07-20'} on 3 hosts
+2020-07-20 16:36:53,156 - nornir.core.task -    ERROR -      start() - Host 'ISP-1': task 'napalm_validate' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\napalm\base\validate.py", line 25, in _get_validation_file
+    validation_source = yaml.safe_load(stream)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\yaml\__init__.py", line 162, in safe_load
+    return load(stream, SafeLoader)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\yaml\__init__.py", line 114, in load
+    return loader.get_single_data()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\yaml\constructor.py", line 49, in get_single_data
+    node = self.get_single_node()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\yaml\composer.py", line 36, in get_single_node
+    document = self.compose_document()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\yaml\composer.py", line 58, in compose_document
+    self.get_event()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\yaml\parser.py", line 118, in get_event
+    self.current_event = self.state()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\yaml\parser.py", line 193, in parse_document_end
+    token = self.peek_token()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\yaml\scanner.py", line 129, in peek_token
+    self.fetch_more_tokens()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\yaml\scanner.py", line 223, in fetch_more_tokens
+    return self.fetch_value()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\yaml\scanner.py", line 577, in fetch_value
+    raise ScannerError(None, None,
+yaml.scanner.ScannerError: mapping values are not allowed here
+  in "backup/2020-07-20/ISP-1-2020-07-20.txt", line 4, column 23
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\networking\napalm_validate.py", line 28, in napalm_validate
+    r = device.compliance_report(
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\napalm\base\base.py", line 1675, in compliance_report
+    return validate.compliance_report(
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\napalm\base\validate.py", line 189, in compliance_report
+    validation_source = _get_validation_file(validation_file)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\napalm\base\validate.py", line 27, in _get_validation_file
+    raise ValidationException(exc)
+napalm.base.exceptions.ValidationException: mapping values are not allowed here
+  in "backup/2020-07-20/ISP-1-2020-07-20.txt", line 4, column 23
+
+2020-07-20 16:36:53,156 - nornir.core.task -    ERROR -      start() - Host 'ISP-1': task 'Check Config' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:/CCNP/DevNet/nornir/start.py", line 104, in config_validate
+    result_validate = task.run(task=napalm_validate,
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 147, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function napalm_validate at 0x000001BF1C96F040> (failed)
+
+
+2020-07-20 16:36:53,713 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'napalm_validate' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\napalm\base\validate.py", line 25, in _get_validation_file
+    validation_source = yaml.safe_load(stream)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\yaml\__init__.py", line 162, in safe_load
+    return load(stream, SafeLoader)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\yaml\__init__.py", line 114, in load
+    return loader.get_single_data()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\yaml\constructor.py", line 49, in get_single_data
+    node = self.get_single_node()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\yaml\composer.py", line 36, in get_single_node
+    document = self.compose_document()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\yaml\composer.py", line 58, in compose_document
+    self.get_event()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\yaml\parser.py", line 118, in get_event
+    self.current_event = self.state()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\yaml\parser.py", line 193, in parse_document_end
+    token = self.peek_token()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\yaml\scanner.py", line 129, in peek_token
+    self.fetch_more_tokens()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\yaml\scanner.py", line 223, in fetch_more_tokens
+    return self.fetch_value()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\yaml\scanner.py", line 577, in fetch_value
+    raise ScannerError(None, None,
+yaml.scanner.ScannerError: mapping values are not allowed here
+  in "backup/2020-07-20/R2-2020-07-20.txt", line 4, column 23
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\networking\napalm_validate.py", line 28, in napalm_validate
+    r = device.compliance_report(
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\napalm\base\base.py", line 1675, in compliance_report
+    return validate.compliance_report(
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\napalm\base\validate.py", line 189, in compliance_report
+    validation_source = _get_validation_file(validation_file)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\napalm\base\validate.py", line 27, in _get_validation_file
+    raise ValidationException(exc)
+napalm.base.exceptions.ValidationException: mapping values are not allowed here
+  in "backup/2020-07-20/R2-2020-07-20.txt", line 4, column 23
+
+2020-07-20 16:36:53,714 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'Check Config' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:/CCNP/DevNet/nornir/start.py", line 104, in config_validate
+    result_validate = task.run(task=napalm_validate,
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 147, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function napalm_validate at 0x000001BF1C96F040> (failed)
+
+
+2020-07-20 16:36:53,893 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'napalm_validate' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\napalm\base\validate.py", line 25, in _get_validation_file
+    validation_source = yaml.safe_load(stream)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\yaml\__init__.py", line 162, in safe_load
+    return load(stream, SafeLoader)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\yaml\__init__.py", line 114, in load
+    return loader.get_single_data()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\yaml\constructor.py", line 49, in get_single_data
+    node = self.get_single_node()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\yaml\composer.py", line 36, in get_single_node
+    document = self.compose_document()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\yaml\composer.py", line 58, in compose_document
+    self.get_event()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\yaml\parser.py", line 118, in get_event
+    self.current_event = self.state()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\yaml\parser.py", line 193, in parse_document_end
+    token = self.peek_token()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\yaml\scanner.py", line 129, in peek_token
+    self.fetch_more_tokens()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\yaml\scanner.py", line 223, in fetch_more_tokens
+    return self.fetch_value()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\yaml\scanner.py", line 577, in fetch_value
+    raise ScannerError(None, None,
+yaml.scanner.ScannerError: mapping values are not allowed here
+  in "backup/2020-07-20/R1-2020-07-20.txt", line 4, column 23
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\networking\napalm_validate.py", line 28, in napalm_validate
+    r = device.compliance_report(
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\napalm\base\base.py", line 1675, in compliance_report
+    return validate.compliance_report(
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\napalm\base\validate.py", line 189, in compliance_report
+    validation_source = _get_validation_file(validation_file)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\napalm\base\validate.py", line 27, in _get_validation_file
+    raise ValidationException(exc)
+napalm.base.exceptions.ValidationException: mapping values are not allowed here
+  in "backup/2020-07-20/R1-2020-07-20.txt", line 4, column 23
+
+2020-07-20 16:36:53,893 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'Check Config' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:/CCNP/DevNet/nornir/start.py", line 104, in config_validate
+    result_validate = task.run(task=napalm_validate,
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 147, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function napalm_validate at 0x000001BF1C96F040> (failed)
+
+
+2020-07-20 16:38:19,067 -  nornir.core -     INFO -        run() - Running task 'Check Config' with args {'name': 'Check Config', 'souce_date': '2020-07-20'} on 3 hosts
+2020-07-20 16:38:32,359 - nornir.core.task -    ERROR -      start() - Host 'ISP-1': task 'napalm_validate' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\napalm\base\validate.py", line 25, in _get_validation_file
+    validation_source = yaml.safe_load(stream)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\yaml\__init__.py", line 162, in safe_load
+    return load(stream, SafeLoader)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\yaml\__init__.py", line 114, in load
+    return loader.get_single_data()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\yaml\constructor.py", line 49, in get_single_data
+    node = self.get_single_node()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\yaml\composer.py", line 36, in get_single_node
+    document = self.compose_document()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\yaml\composer.py", line 58, in compose_document
+    self.get_event()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\yaml\parser.py", line 118, in get_event
+    self.current_event = self.state()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\yaml\parser.py", line 193, in parse_document_end
+    token = self.peek_token()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\yaml\scanner.py", line 129, in peek_token
+    self.fetch_more_tokens()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\yaml\scanner.py", line 223, in fetch_more_tokens
+    return self.fetch_value()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\yaml\scanner.py", line 577, in fetch_value
+    raise ScannerError(None, None,
+yaml.scanner.ScannerError: mapping values are not allowed here
+  in "backup/2020-07-20/ISP-1-2020-07-20.txt", line 4, column 23
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\networking\napalm_validate.py", line 28, in napalm_validate
+    r = device.compliance_report(
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\napalm\base\base.py", line 1675, in compliance_report
+    return validate.compliance_report(
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\napalm\base\validate.py", line 189, in compliance_report
+    validation_source = _get_validation_file(validation_file)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\napalm\base\validate.py", line 27, in _get_validation_file
+    raise ValidationException(exc)
+napalm.base.exceptions.ValidationException: mapping values are not allowed here
+  in "backup/2020-07-20/ISP-1-2020-07-20.txt", line 4, column 23
+
+2020-07-20 16:38:32,360 - nornir.core.task -    ERROR -      start() - Host 'ISP-1': task 'Check Config' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:/CCNP/DevNet/nornir/start.py", line 104, in config_validate
+    result_validate = task.run(task=napalm_validate,
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 147, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function napalm_validate at 0x000001FC8133F040> (failed)
+
+
+2020-07-20 16:38:32,904 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'napalm_validate' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\napalm\base\validate.py", line 25, in _get_validation_file
+    validation_source = yaml.safe_load(stream)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\yaml\__init__.py", line 162, in safe_load
+    return load(stream, SafeLoader)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\yaml\__init__.py", line 114, in load
+    return loader.get_single_data()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\yaml\constructor.py", line 49, in get_single_data
+    node = self.get_single_node()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\yaml\composer.py", line 36, in get_single_node
+    document = self.compose_document()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\yaml\composer.py", line 58, in compose_document
+    self.get_event()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\yaml\parser.py", line 118, in get_event
+    self.current_event = self.state()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\yaml\parser.py", line 193, in parse_document_end
+    token = self.peek_token()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\yaml\scanner.py", line 129, in peek_token
+    self.fetch_more_tokens()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\yaml\scanner.py", line 223, in fetch_more_tokens
+    return self.fetch_value()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\yaml\scanner.py", line 577, in fetch_value
+    raise ScannerError(None, None,
+yaml.scanner.ScannerError: mapping values are not allowed here
+  in "backup/2020-07-20/R2-2020-07-20.txt", line 4, column 23
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\networking\napalm_validate.py", line 28, in napalm_validate
+    r = device.compliance_report(
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\napalm\base\base.py", line 1675, in compliance_report
+    return validate.compliance_report(
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\napalm\base\validate.py", line 189, in compliance_report
+    validation_source = _get_validation_file(validation_file)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\napalm\base\validate.py", line 27, in _get_validation_file
+    raise ValidationException(exc)
+napalm.base.exceptions.ValidationException: mapping values are not allowed here
+  in "backup/2020-07-20/R2-2020-07-20.txt", line 4, column 23
+
+2020-07-20 16:38:32,904 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'Check Config' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:/CCNP/DevNet/nornir/start.py", line 104, in config_validate
+    result_validate = task.run(task=napalm_validate,
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 147, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function napalm_validate at 0x000001FC8133F040> (failed)
+
+
+2020-07-20 16:38:33,112 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'napalm_validate' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\napalm\base\validate.py", line 25, in _get_validation_file
+    validation_source = yaml.safe_load(stream)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\yaml\__init__.py", line 162, in safe_load
+    return load(stream, SafeLoader)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\yaml\__init__.py", line 114, in load
+    return loader.get_single_data()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\yaml\constructor.py", line 49, in get_single_data
+    node = self.get_single_node()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\yaml\composer.py", line 36, in get_single_node
+    document = self.compose_document()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\yaml\composer.py", line 58, in compose_document
+    self.get_event()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\yaml\parser.py", line 118, in get_event
+    self.current_event = self.state()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\yaml\parser.py", line 193, in parse_document_end
+    token = self.peek_token()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\yaml\scanner.py", line 129, in peek_token
+    self.fetch_more_tokens()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\yaml\scanner.py", line 223, in fetch_more_tokens
+    return self.fetch_value()
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\yaml\scanner.py", line 577, in fetch_value
+    raise ScannerError(None, None,
+yaml.scanner.ScannerError: mapping values are not allowed here
+  in "backup/2020-07-20/R1-2020-07-20.txt", line 4, column 23
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\plugins\tasks\networking\napalm_validate.py", line 28, in napalm_validate
+    r = device.compliance_report(
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\napalm\base\base.py", line 1675, in compliance_report
+    return validate.compliance_report(
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\napalm\base\validate.py", line 189, in compliance_report
+    validation_source = _get_validation_file(validation_file)
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\napalm\base\validate.py", line 27, in _get_validation_file
+    raise ValidationException(exc)
+napalm.base.exceptions.ValidationException: mapping values are not allowed here
+  in "backup/2020-07-20/R1-2020-07-20.txt", line 4, column 23
+
+2020-07-20 16:38:33,112 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'Check Config' failed with traceback:
+Traceback (most recent call last):
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "D:/CCNP/DevNet/nornir/start.py", line 104, in config_validate
+    result_validate = task.run(task=napalm_validate,
+  File "D:\CCNP\DevNet\nornir\venv\lib\site-packages\nornir\core\task.py", line 147, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function napalm_validate at 0x000001FC8133F040> (failed)
+
+

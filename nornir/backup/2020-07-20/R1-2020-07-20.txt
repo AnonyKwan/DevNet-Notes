@@ -1,16 +1,16 @@
 Building configuration...
 
   
-Current configuration : 3759 bytes
+Current configuration : 3321 bytes
 !
-! Last configuration change at 09:15:26 UTC Sun Jul 19 2020 by admin
+! Last configuration change at 04:09:10 UTC Mon Jul 20 2020
 !
 version 15.7
 service timestamps debug datetime msec
 service timestamps log datetime msec
 no service password-encryption
 !
-hostname ISP
+hostname R1
 !
 boot-start-marker
 boot-end-marker
@@ -35,19 +35,10 @@ no ip icmp rate-limit unreachable
 !
 !
 !
-ip dhcp excluded-address 10.0.0.1 10.0.0.9
-ip dhcp excluded-address 10.0.0.200 10.0.0.255
-!
-ip dhcp pool ISP
- network 10.0.0.0 255.255.255.0
- default-router 10.0.0.1 
- dns-server 1.1.1.1 
- domain-name DevNet.local
 !
 !
 !
 no ip domain lookup
-ip domain name DevNet-ISP.local
 ip cef
 no ipv6 cef
 !
@@ -56,7 +47,7 @@ multilink bundle-name authenticated
 !
 !
 !
-username admin privilege 15 secret 5 $1$gWSq$DFSd5fBX1H3D7211aL9Tr/
+username admin privilege 15 secret 5 $1$NBFi$PVoYDV7FiJmLJvhdnoQJW.
 !
 redundancy
 !
@@ -77,15 +68,16 @@ ip tcp synwait-time 5
 !
 !
 interface GigabitEthernet0/0
- ip address 10.10.10.254 255.255.255.0
+ ip address 10.0.0.10 255.255.255.0
  ip ospf 10 area 0
  duplex auto
  speed auto
  media-type rj45
 !
 interface GigabitEthernet0/1
- ip address 10.0.0.1 255.255.255.0
+ no ip address
  ip ospf 10 area 0
+ shutdown
  duplex auto
  speed auto
  media-type rj45
@@ -105,20 +97,12 @@ interface GigabitEthernet0/3
  media-type rj45
 !
 router ospf 10
- router-id 1.1.1.1
- default-information originate always
-!
-router ospf 20
 !
 ip forward-protocol nd
-!
-ip flow-aggregation cache source-prefix
- enabled
 !
 !
 no ip http server
 no ip http secure-server
-ip route 0.0.0.0 0.0.0.0 GigabitEthernet0/0
 ip ssh version 2
 !
 ipv6 ioam timestamp

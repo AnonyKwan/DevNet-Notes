@@ -1,16 +1,16 @@
 Building configuration...
 
   
-Current configuration : 3311 bytes
+Current configuration : 3321 bytes
 !
-! Last configuration change at 09:15:28 UTC Sun Jul 19 2020 by admin
+! Last configuration change at 04:09:20 UTC Mon Jul 20 2020
 !
 version 15.7
 service timestamps debug datetime msec
 service timestamps log datetime msec
 no service password-encryption
 !
-hostname R1
+hostname R2
 !
 boot-start-marker
 boot-end-marker
@@ -47,7 +47,7 @@ multilink bundle-name authenticated
 !
 !
 !
-username admin privilege 15 secret 5 $1$NBFi$PVoYDV7FiJmLJvhdnoQJW.
+username admin privilege 15 secret 5 $1$QzNb$hZP43Cb9x2Qk7PDWDrxP3.
 !
 redundancy
 !
@@ -68,7 +68,7 @@ ip tcp synwait-time 5
 !
 !
 interface GigabitEthernet0/0
- ip address dhcp
+ ip address 10.0.0.11 255.255.255.0
  ip ospf 10 area 0
  duplex auto
  speed auto
