@@ -20,7 +20,7 @@ Learning Network Automation
 ---
 > [Ansible Network Docs](https://docs.ansible.com/ansible/latest/network/)
 
-# **NorNir Cheat-Sheet** - Python-Based (Configuration & Operation) Most efficient **Preferred**
+# **NorNir Cheat-Sheet** - Python-Based (Configuration & Operation) >  efficient for Config and retrieve config
 
 > Go through the tutorial of the official Documentation
 
@@ -31,7 +31,7 @@ Learning Network Automation
 
 >[Nornir Plugins](https://nornir.readthedocs.io/en/latest/plugins/index.html)
 
-# **pyATS  Cheat-Sheet** - CLI & Python-Based (Operation) (Verification/Testing) 
+# **pyATS  Cheat-Sheet** - CLI & Python-Based (Operation) > efficient for Validation (Use CLI)
 
 > ** USE THE CLI IS MUCH EASIER **
 ---
