@@ -33,11 +33,7 @@ Learning Network Automation
 
 # **pyATS  Cheat-Sheet** - CLI & Python-Based (Operation) (Verification/Testing) 
 
->Run in Virtual Enviroment
-
-* python3 -m venv .
-
-* source bin/activate .
+> ** USE THE CLI IS MUCH EASIER **
 ---
 > pyats create testbed interactive --output YAML/testbed.yaml --encode-password   **# Create Testbed File with interaction mode**
 
